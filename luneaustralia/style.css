@@ -1,0 +1,239 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url("images/background.png");
+    background-color: rgba(195, 232, 255, 1.0);
+}
+
+/**
+ * NAVIGATION
+ */
+
+nav {
+    max-height: 200px;
+    text-align: center;
+    padding: 25px 0px;
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+}
+
+nav img {
+    height: 100%;
+}
+
+/**
+ * HEADER
+ */
+
+header {
+    min-width: 100%;
+    /*min-height: 100%;*/
+/*    background-size: contain;
+    background-repeat: repeat no-repeat;
+    background-image: url("images/header_bg.jpg");*/
+}
+
+#header_wrapper {
+    max-width: 960px;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+
+#math_masher_logo {
+    width: 100%;
+    padding: 0px 20px;
+    margin: 10px 0px;
+}
+
+@media only screen and (min-width: 768px) {
+    #math_masher_logo {
+        width: 100%;
+        padding: 25px 60px;
+    }
+}
+
+/* STORE */
+
+#store_wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#app_store, #play_store {
+    width: 100%;
+    padding: 10px;
+}
+
+#lune_logo {
+	height: 150px;
+	margin: auto;
+}
+
+#app_store:hover, #play_store:hover, #fb_logo:hover {
+    transform: scale(1.1);
+}
+
+@media only screen and (min-width: 768px) {
+    #app_store, #play_store {
+        padding: 25px;
+    }
+
+    .game_play:hover {
+        transform: scale(1.1);
+    }
+
+    #store_wrapper {
+        width: 80%;
+        margin: 0px auto;
+    }
+}
+
+/**
+ * MAIN
+ */
+
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    clear: both;
+}
+
+/* TRAILER */
+#trailer_wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin: 0px 0px 25px 0px;
+}
+
+#trailer_wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px;
+}
+
+#math_masher_desc {
+    width: 80%;
+    padding: 0px 0px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.7);
+    text-align: left;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#math_masher_desc p, li, ul{
+    margin: 10px 0px;
+    padding: 0px 20px;
+}
+
+#math_masher_desc li {
+    list-style-type: none;
+}
+
+@media only screen and (min-width: 768px) {
+    #math_masher_desc {
+        /*padding: 0px 150px;*/
+    }
+}
+
+#game_play_wrapper .col-4 {
+    margin: 10px 0px 10px 0px;
+}
+
+@media only screen and (min-width: 768px) {
+    #game_play_wrapper {
+        margin: 25px 0px 0px 0px;
+        width: 100%;
+    }
+}
+
+.game_play {
+    width: 90%;
+    margin: 0px 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * FOOTER
+ */
+
+footer {
+    clear: both;
+    text-align: center;
+    margin: 50px auto 0px auto;
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+}
+
+#footer_wrapper {
+    border-top: solid 1px black;
+    padding: 25px 0px;
+    max-width: 960px;
+    margin: 0px auto;
+}
+
+#email {
+    margin-top: 25px;
+}
+
+#email a:link {
+    color: black;
+    text-decoration: none;
+}
+
+#copyright {
+    margin-top: 30px;
+}
+
+#fb_logo {
+    width: 5%;
+    margin-top: 10px;
+}
+
+#email a:hover {
+    color: red;
+}
+
+/**
+ * Grid-View
+ * https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+ */
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
