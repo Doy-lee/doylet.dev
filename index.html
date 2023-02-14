@@ -1,584 +1,149 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang=en-us>
     <head>
-        <meta charset="UTF-8">
-        <!--stackoverflow.com/questions/18500836/should-i-use-max-device-width-or-max-width-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" rel="stylesheet" href="style.css"/>
-        <title>Doyle T. | Resume</title>
+        <style>
+            html {
+              font-family: sans-serif;
+              font-size: 10pt;
+              color: #020229
+            }
+
+            body {
+                margin: 2rem 2rem;
+                max-width: 80ch;
+                background: #fbfbfd;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              padding: 0;
+              margin: 0;
+            }
+
+            p {
+                margin: 0.75em 0;
+            }
+
+            .divider {
+                height: 0.1rem;
+                width: 100%;
+                background: #020229;
+            }
+
+            .job-role {
+                display: flex;
+                flex-direction: row;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .job-role p {
+                margin-bottom: 0;
+            }
+
+            .job-role-year {
+                width: 13ch;
+            }
+
+        </style>
     </head>
-
-    <body id="index_wrapper">
+    <body>
+        <header>
+            <div>
+                <h1>Doyle T.</h1>
+                <p>G'day, I'm a software developer that enjoys low-level programming.</p>
+            </div>
+        </header>
         <main>
-
-            <div class="index_header">
+            <section aria-label="Contact Links">
+                <h2>Links</h2>
+                <div class=divider></div>
+                <ul class=contact-links>
+                    <li>CV <a href="cv.doylet.dev">cv.doylet.dev</a></li>
+                    <li>Email <a href="cv.doylet.2380i@simplelogin.com">cv.doylet.2380i@simplelogin.com</a></li>
+                    <li>Github <a href="https://github.com/doy-lee">https://github.com/doy-lee</a></li>
+                </ul>
+            </section>
+            <section aria-label="Tenure">
+                <h2>Tenure</h2>
+                <div class=divider></div>
                 <div>
-                    <h1>DOYLE T.</h1>
+                    <div class=job-role>
+                        <p class=job-role-year>2022 - Present</p>
+                        <p>AI, C++ Senior Software Engineer, Agent Orientated Software (AI)</p>
+                    </div>
                 </div>
-                <div id="index_header_subtitle">
-                    Print Friendly Summary: <a href="doylet_resume_summary.pdf">doy-lee.github.io/doylet_resume_summary.pdf</a></li>
+                <div>
+                    <div class=job-role>
+                        <p class=job-role-year>2020 - 2022</p>
+                        <p>AI, C++ Software Engineer, Agent Orientated Software (AI)</p>
+                    </div>
+                    <p>
+                        AOS creates tools for creating trustable and explainable
+                        AI using multi-agent architecture and the cognitive
+                        framework Beliefs, Desires, Intentions (BDI). My role
+                        involves improving AI toolchain such as improving
+                        cross-agent collaboration, forward planning, scheduling
+                        and deconflicting intention execution and distributed
+                        agent communication to improve resilience in adversarial
+                        situations.
+                    </p>
+                    <p>
+                    </p>
                 </div>
-            </div>
-
-            <div class="index_divider_no_top_margin"></div>
-
-            <div id="index_overview">
-                <div class="index_overview_section">
-                    <h2>DETAIL</h2>
+                <div>
+                    <div class=job-role>
+                        <p class=job-role-year>2018 - 2020</p>
+                        <p>C++ Software Engineer, Oxen (Blockchain)</p>
+                    </div>
+                    <p>
+                        Oxen is a non-for-profit, open-source company developing
+                        privacy protocols and tools. I implemented
+                        a decentralized layer of servers known as the Service
+                        Node[1] network that distributes the blockchain and
+                        maintains layer access-control. They coordinate
+                        peer-to-peer to evict underperforming and malicious
+                        peers whilst generating entropy for securing blocks
+                        using checkpointing[2] and a commit-reveal scheme known
+                        as Pulse[3].
+                    </p>
+                    <p>
+                        With over 1k+ servers and growing, the Service Node
+                        network provides a sybil-resistant foundation to
+                        facilitate a privacy preserving onion routing network,
+                        Lokinet, and, a privacy preserving messenger, Session.
+                    </p>
                     <ul>
-                        <li>This Resume: <a href="http://doy-lee.github.io">doy-lee.github.io</a></li>
-                        <li>Email: <a href="mailto:cv.doylet.2380i@simplelogin.com">cv.doylet.2380i@simplelogin.com</a></li>
-                        <li>Github: <a href="http://github.com/doy-lee">github.com/doy-lee</a></li>
-                        <li>Flickr: <a href="http://flickr.com/doy-lee">flickr.com/doy-lee</a></li>
-                    </ul>
-                </div> <!-- index_overview_section -->
-
-                <!-- QR Code generated by Google -->
-                <!-- http://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl=doy-lee.github.io -->
-                <div class="index_overview_section" id="index_overview_section_qr_code">
-                    <h2>RESUME QR CODE</h2>
-                    <img style="max-width: 100, height: auto" src="img/qr_code.png">
-                </div>
-            </div> <!-- index_overview -->
-
-            <div class="index_divider"></div>
-
-            <div class="index_wrapper">
-                <h2>WORK EXPERIENCE</h2>
-
-                <div class="index_table">
-                    <ul class="index_table_row">
-                        <li class="index_table_cell_year">
-                            <p>CURRENT</p>
-                            <p>2020 OCT</p>
-                        </li>
-
-                        <li class="index_table_cell_name">
-                            <h3>AOS Group</h3>
-                            <p>Software Engineer</p>
-                        </li>
-
-                        <li class="index_table_cell">
-                            <p class="index_table_cell_role">
-                                AI Toolchain/Planning Engine Team:
-                                <a href="https://aosgrp.com">(aosgrp.com)</a>
-                            </p>
-                            <p>
-                                AOS creates tools to model real-world systems via reasoning agents
-                                running in AOS's real-time BDI (Beliefs, Desires, Intentions)
-                                planning engine providing fault-tolerant, traceable and
-                                explainable autonomous real-world systems.
-                            </p>
-                            <ul>
-                                <li>C++11, Kafka, RTI DDS, SFML, Dear ImGui, BDI/Multi-Agent Protocols, Windows/Linux</li>
-                                <li>
-                                    Write a 2D simulation engine w/ ECS for tests and
-                                    demonstration of interactive agent models.
-                                </li>
-                                <li>
-                                    Converting real-world system specs to a multi-agent
-                                    paradigm to highlight deficiencies in the development
-                                    methodology leading to new protocols such as how to share
-                                    beliefs between teams of agents and interactive human
-                                    contribution into agent decision making.
-                                </li>
-                                <li>
-                                    Co-implement a distribution protocol for the planning engine
-                                    allowing the synchronisation of other engine instances for
-                                    fault-tolerance and cross-engine agent collaboration.
-                                </li>
-                                <li>
-                                    Documenting best practices and tutorials for designing effective
-                                    multi-agent systems.
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <ul class="index_table_row">
-                        <li class="index_table_cell_year">
-                            <p>2020 OCT</p>
-                            <p>2018 FEB</p>
-                        </li>
-
-                        <li class="index_table_cell_name">
-                            <h3><a href="index.html#index_projects_oxen">Oxen (prev. Loki)</a></h3>
-                            <p>Software Engineer</p>
-                        </li>
-
-                        <li class="index_table_cell">
-                            <p class="index_table_cell_role">
-                               Blockchain Team
-                               <a href="https://github.com/oxen-io/oxen/commits?author=Doy-lee">(github.com/oxen-io/oxen/commits?author=Doy-lee)</a>
-                            </p>
-                            <p>
-                                Oxen is a blockchain company that creates privacy tools that enable
-                                untraceable, secure and anonymous money, onion routed messaging and
-                                networks powered by a masternode network on-top of the blockchain.
-                            </p>
-                            <ul>
-                                <li>C++14, Boost, Docker, CMake, Libsodium, Monero/Cryptonote, Windows/OSX/Linux/Android</li>
-                                <li>
-                                    Implement layer 2 masternodes which are quorums of
-                                    permissioned nodes via new chain protocols: de/registration and
-                                    payout transactions and self-regulating consensus with
-                                    reliability metrics and voting via a P2P gossip network.
-                                </li>
-                                <li>
-                                    Improve chain resilience by securing blocks using checkpoints
-                                    formed by masternode consensus providing faster settlement and
-                                    finalization of transactions on the network.
-                                </li>
-                                <li>
-                                    Implement an on-chain DNS registry for named records for
-                                    wallets, messaging aliases and domains on the onion routed
-                                    networks.
-                                </li>
-                                <li>
-                                    Transition from Proof of Work to Proof of Stake
-                                    on a decentralized network using a commit-reveal scheme for
-                                    generating non-exploitable entropy for block generation.
-                                </li>
-                                <li>
-                                    Responsible for building, packaging and distribution of
-                                    releases. Patching vulnerability disclosures and fixing
-                                    network stalls on an in production network.
-                                </li>
-                                <li>
-                                    Fix/improve/create test tooling for the Service Node network
-                                    including a re-write of the Monero testing framework and
-                                    integration tests using IPC named pipes over multi-process.
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <ul class="index_table_row">
-                        <li class="index_table_cell_year">
-                            <p>2017 NOV</p>
-                            <p>2017 AUG</p>
-                        </li>
-
-                        <li class="index_table_cell_name">
-                            <h3>Wargaming</h3>
-                            <p>Intern SWE</p>
-                        </li>
-
-                        <li class="index_table_cell">
-                            <ul>
-                                <p class="index_table_cell_role">
-                                    Client Tools Team
-                                   <a href="https://wargaming.com/en/about">(wargaming.com/en/about/)</a>
-                                </p>
-                                <li>Assisting with the game editor for the asset pipeline involving C++11, Qt, Jira, Perforce, Plastic</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                </div> <!-- index_table -->
-            </div> <!-- index_wrapper -->
-
-            <div class="index_divider"></div>
-
-            <div id="index_wrapper">
-                <h2>SIDE PROJECTS</h2>
-
-                <div class="index_table">
-
-                    <ul class="index_table_row">
-                        <li class="index_table_cell_year">
-                            <p>ONGOING</p>
-                        </li>
-
-                        <li class="index_table_cell_name">
-                            <h3>Dqn Library</h3>
-                        </li>
-
-                        <li class="index_table_cell">
-                            <p class="index_table_cell_role">
-                                Personal Utility Library C++
-                                <a href="http://github.com/doy-lee/dqn">(github.com/doy-lee/dqn)</a>
-                            </p>
-                            <ul>
-                                <li>Helpers to bootstrap projects quickly and improving my API design by experience</li>
-                                <li>Cache friendly stack based containers for data that has a low upper-bound</li>
-                                <li>Arena based allocators for manual, cheap heap allocation and freeing</li>
-                                <li>For learning, SHA3-256, unit test, C/C++ metaprogram generator library</li>
-                            </ul>
-                        </li>
-                    </ul> <!-- index_table_row -->
-
-                    <ul class="index_table_row">
-                        <li class="index_table_cell_year">
-                            <p>2020</p>
-                            <p>2017</p>
-                            <p>.</p>
-                            <p>.</p>
-                            <p>2016</p>
-                        </li>
-
-                        <li class="index_table_cell_name">
-                            <h3    style="font-size: 0.85em">RaylibSIMD</h3>
-                            <h3><a style="font-size: 0.85em" href="index.html#index_projects_dtrenderer">DTRenderer</a></h3>
-                            <h3><a style="font-size: 0.85em" href="index.html#index_projects_dchip8">DChip8</a></h3>
-                            <h3><a style="font-size: 0.85em" href="index.html#index_projects_math_masher">Math Mash</a></h3>
-                            <h3><a style="font-size: 0.85em" href="index.html#index_projects_dengine">Dengine</a></h3>
-                        </li>
-
-                        <li class="index_table_cell">
-                            <p class="index_table_cell_role">
-                                SIMD Software Rendering (SSE, 4x faster)
-                                <a href="http://github.com/doy-lee/RaylibSIMD">(github.com/doy-lee/RaylibSIMD)</a>
-                            </p>
-                            <p class="index_table_cell_role">
-                                3D Software Renderer from First Principles
-                                <a href="http://github.com/doy-lee/DTRenderer">(github.com/doy-lee/DTRenderer)</a>
-                            </p>
-                            <p class="index_table_cell_role">
-                                CHIP8 Interpreter (C/C++, Win32)
-                                <a href="http://github.com/doy-lee/dchip-8">(github.com/doy-lee/dchip-8)</a>
-                            </p>
-                            <p class="index_table_cell_role">
-                                Mobile Game (C++, Photoshop, Cocos2dx) <a href="http://doy-lee.github.io/luneaustralia">(doy-lee.github.io/luneaustralia)</a>
-                            </p>
-                            <p class="index_table_cell_role">
-                                Basic 2D Engine (C++, OpenGL, GLFW, STB, OpenAL)
-                                <a href="http://github.com/doy-lee/dengine">(github.com/doy-lee/dengine)</a>
-                            </p>
-                        </li>
-                    </ul> <!-- index_table_row -->
-
-                </div>
-            </div> <!-- index_project_wrapper -->
-
-            <div class="index_divider"></div>
-            <div id="index_education_wrapper">
-                <h2>EDUCATION</h2>
-
-                <div id="index_education_table">
-                    <ul class="index_education_table_row">
-                            <li class="index_education_table_cell_year">
-                                <p>2014-2017</p>
-                            </li>
-
-                            <li class="index_education_table_cell_place">
-                                <h3>UNIVERSITY OF NEW SOUTH WALES</h3>
-                            </li>
-
-                            <li class="index_education_table_cell">
-                                <p>Bachelor of Science (Computer Science)</p>
-                            </li>
+                        <li>[1] Service Nodes <a href="https://oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes">oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes</a></li>
+                        <li>[2] Checkpointing <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md</a></li>
+                        <li>[3] Pulse <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md</a></li>
                     </ul>
                 </div>
-            </div> <!-- index_education_wrapper -->
-
-            <!-- IMPORTANT: This divider has a page break that pushes away
-            the content below to the next page in printing mode -->
-            <div class="index_divider" id="index_divider_last_before_optional_content"></div>
-
-            <div id="index_projects_oxen">
-                <div class="index_projects_header">
-                    <h2>OXEN (formerly Loki) - Privacy tools for untraceable, secure and anonymous communications</h2>
-                </div>
-
-                <div class="index_projects_content">
-                    <div class="index_projects_content_section">
-                        <div class="index_projects_preview" id="index_projects_preview_images_loki">
-                            <img src="img/projects_loki_screen_1.png">
-                        </div>
-
-                        <div class="index_projects_content_section">
-                            <h3>SUMMARY</h3>
-                            <p>
-                            Oxen is a blockchain company that creates privacy tools that enable
-                            untraceable, secure and anonymous money, onion routed messaging and
-                            networks powered by a masternode network on-top of the blockchain.
-                            </p>
-
-                            <p>
-                            They are an open-source, non-for profit company that is responsible for
-                            developing the Oxen blockchain, Session a private messenger and Lokinet
-                            an onion routing network.
-                            </p>
-
-                            <p>
-                            As the primary blockchain engineer, I worked towards developing a
-                            masternode network and auxiliary features that protects the network from
-                            malicious activity, tampering and allow nodes to enter and leave the
-                            permissioned network to maintain a sybil resistant network that is
-                            suitable for onion routing of the services provided on-top.
-                            </p>
-                        </div>
-
-                        <div class="index_projects_content_section">
-                            <h3>MILESTONES</h3>
-                            <h4>Service Node Network (Masternode Layer)</h4>
-                            <a style="font-size: 0.85em" href="https://docs.oxen.io/about-the-oxen-blockchain/oxen-service-nodes">https://docs.oxen.io/about-the-oxen-blockchain/oxen-service-nodes</a>
-                            <ul>
-                                <li>Implement layer 2 masternodes which are quorums of permissioned nodes via new chain protocols: de/registration and payout transactions and self-regulating consensus with reliability metrics and voting via a P2P gossip network.</li>
-                                <li>Design new cryptographic transactions for Service Node registration/blacklisting/unlocking/voting</li>
-                                <li>Penalizing misbehaving Service Nodes by temporary locking of registered funds and rewarding behaving Service Nodes with automatic on-chain</li>
-                                <li>Keep the network consistent against malicious Service Nodes by gracefully rolling back state and banning.</li>
-                                <li>Develop a node grouping system aka. quorums to self-regulate the network by collecting metrics and coming to consensus to deregister nodes off the network</li>
-                                <li>JSON RPC API for statistics used by external services for metrics (i.e. CoinMarketCap, Masternodes Pro, <a href="https://lokidashboard.com">lokidashboard.com</a>) </li>
-                            </ul>
-
-                            <h4>Service Node Checkpointing</h4>
-                            <a style="font-size: 0.85em" href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md">https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md</a>
-                            <ul>
-                                <li>Improve chain resilience by securing blocks using checkpoints formed by masternode consensus providing faster settlement and finalization of transactions on the network.</li>
-                                <li>Defend against 51% attacks on the blockchain and mitigate double spends</li>
-                                <li>Additional consensus rules to lock in blocks autonomously by Service Nodes</li>
-                                <li>Improves the previous manual system of updating hardcoded lists per release to passively locking the chain as it progresses.</li>
-                            </ul>
-
-                            <h4>Oxen Name System</h4>
-                            <a style="font-size: 0.85em" href="https://docs.oxen.io/using-the-oxen-blockchain/overview#oxen-name-system-ons-human-readable-names-for-session-lokinet-and-more">https://docs.oxen.io/using-the-oxen-blockchain/overview#oxen-name-system-ons-human-readable-names-for-session-lokinet-and-more</a>
-                            <ul>
-                                <li>Implement an on-chain DNS registry for named records for wallets, messaging aliases and domains on the onion routed networks.  </li>
-                                <li>New transactions to burn funds and record temporarily owned name entries into the blockchain</li>
-                                <li>Interop with Libsodium and Monero cryptography for encryption/decryption of records</li>
-                                <li>End User API for integration across external services such as Session, wallet software and Lokinet</li>
-                            </ul>
-
-                            <h4>Pulse (Proof of Stake)</h4>
-                            <a style="font-size: 0.85em" href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md">https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md</a>
-                            <ul>
-                                <li>Transition from Proof of Work to Proof of Stake on a decentralized network using a commit-reveal scheme for generating non-exploitable entropy for block generation.</li>
-                                <li>Coordinate a commit reveal scheme to generate and collect entropy from a quorum of nodes within an time-limited epoch for block generation</li>
-                                <li>Multi-round process to synchronise data, prevent leaking of random entropy and ensure no biasing of results</li>
-                                <li>Fail safe mechanisms to support round failure, and network failure, i.e. falling back to Proof of Work when the Service Nodes are unable to coordinate the quorum</li>
-                            </ul>
-
-                            <h4>Other</h4>
-                            <ul>
-                                <li>Loki Onion Blockchain Explorer - Forked and repurposed for additional Service Node information</li>
-                                <li>Loki Integration Tests - Multi-process IPC to blockchain daemons to simulate user interaction</li>
-                                <li>Loki RPC Doc Generator - Custom Recursive Descent Parser for generating documentation</li>
-                                <li>Rewriting core testing framework to extensively test new Service Node features</li>
-                                <li>Handling cross platform builds, CI and distribution (Windows, Linux, OSX, Android)</li>
-                            </ul>
-                        </div>
-
-                        <div class="index_projects_content_section">
-                            <h3>LINKS</h3>
-                            <ul>
-                                <li> <a href="https://oxen.io">Oxen Homepage</a> (oxen.io)</li>
-                                <li> <a href="https://github.com/oxen-io/oxen-core">Main Github</a> (github.com/oxen-io/oxen-core)</li>
-                                <li> <a href="https://github.com/oxen-io/oxen-core/commits?author=Doy-lee">Main Commits</a> (github.com/oxen-io/oxen-core/commits?author=Doy-lee)</li>
-                                <li> <a href="https://github.com/oxen-io/loki-onion-blockchain-explorer">Block Explorer</a> (github.com/oxen-io/loki-onion-blockchain-explorer)</li>
-                                <li> <a href="https://github.com/doy-lee/loki-rpc-doc-generator">RPC Doc Generator</a> (github.com/doy-lee/loki-rpc-doc-generator) </li>
-                                <li> <a href="https://github.com/doy-lee/loki-integration-testing">Integration Testing</a> (github.com/doy-lee/loki-integration-testing) </li>
-                            </ul>
-                        </div> <!-- index_projects_content_section -->
-
-                    </div> <!-- index_projects_content_section -->
-                </div>
-            </div>
-            <div class="index_divider"></div>
-
-            <div id="index_projects_dtrenderer">
-                <div class="index_projects_header" id="index_projects_dtrenderer_header">
-                    <h2>DTRENDERER (2017) - 3D Software Renderer from First Principles</h2>
-                </div>
-
-                <div class="index_projects_preview_images" id="index_projects_preview_images_dtrenderer">
-                    <img src="img/projects_dtrenderer.gif">
-                </div>
-
-                <div class="index_projects_content">
-                    <div class="index_projects_content_section">
-                        <h3>SUMMARY</h3>
-                        <p>
-                            DTRenderer is an attempt to build a simple software renderer from the ground up.
-                            The main goal is to build an intuitive understanding of graphics mathematics,
-                            rendering pipeline and core concepts. It runs as a Win32 program with minimal
-                            dependencies.
-                        </p>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>MILESTONES</h3>
-                        <h4>2D Software Rendering</h4>
-                        <ul>
-                            <li>Alpha Blending</li>
-                            <li>Bilinear Filtering</li>
-                            <li>Correct Color Space Pipeline (SRGB <-> Linear)</li>
-                            <li>Rasterisation</li>
-                            <li>Texture Mapping</li>
-                            <li>Translation, Rotation, Scale</li>
-                        </ul>
-                        <h4>3D Software Rendering</h4>
-                        <ul>
-                            <li>Full Bright, Flat, Gouraud Shading</li>
-                            <li>Orthogaphic, Perspective Projections</li>
-                            <li>Translation Rotation Scale</li>
-                        </ul>
-                        <h4>Misc.</h4>
-                        <ul>
-                            <li>Custom Wavefront Obj Loader (minimal subset)</li>
-                            <li>Hot Reloadable DLL for Renderer Code (taken from Handmade Hero)</li>
-                            <li>SIMD "Optimisation" (with a grain of salt, tried to with some % improvement)</li>
-                        </ul>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>LINKS</h3>
-                        <ul>
-                            <li> <a href="http://github.com/doy-lee/DTRenderer">Github</a> (github.com/Doy-lee/DTRenderer) </li>
-                        </ul>
+                <div>
+                    <div class=job-role>
+                        <p class=job-role-year>2017 - 2017</p>
+                        <p>C++ Intern Software Engineer, Wargaming Sydney (Game Dev)</p>
                     </div>
-
+                    <p>
+                        Game development company most popular for developing
+                        World of Tanks. I was in the tools team assisting with
+                        the development of the editor for the asset pipeline.
+                    </p>
                 </div>
-            </div> <!-- index_projects_dtrenderer -->
-
-            <div class="index_divider"></div>
-
-            <div id="index_projects_math_masher">
-                <div class="index_projects_header" id="index_projects_math_masher_header">
-                    <h2>MATH MASHER (2017) - Educational Mobile Math Game</h2>
-                </div>
-
-                <div class="index_projects_preview_images" id="index_projects_preview_images_math_masher">
-                    <img src="img/projects_math_masher_screen_1.jpg">
-                    <img src="img/projects_math_masher_screen_2.jpg">
-                    <img src="img/projects_math_masher_screen_3.jpg">
-                </div>
-
-                <div class="index_projects_content">
-                    <div class="index_projects_content_section">
-                        <h3>SUMMARY</h3>
-                        <p>Math Masher is a cross-platform mobile app that aims to teach
-                        basic arithmetic skills including addition, subtraction and
-                        multiplication by gamifying the learning experience. The app is
-                        developed with a team using the Cocos2dx framework in
-                        C++.</p>
-
-                        <p>My role in the project is as the lead developer and
-                        assisting role with asset design.</p>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>MILESTONES/RESEARCH</h3>
-                        <p>Features that have been implemented at one point or tasks responsible for.</p>
-                        <ul>
-                            <li>Project Management (Trello, Minutes Meeting, Code Review etc.)</li>
-                            <li>Game Engine Architecture (Gameplay, UI, Shop, Debug)</li>
-                            <li>Basic Sound Editing (Compressor, EQuing, Normalisation)</li>
-                            <li>Asset Designs (Assisting with graphical asset creation)</li>
-                        </ul>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>LINKS</h3>
-                        <ul>
-                            <li> <a href="luneaustralia/index.html">Official Website (deprecated, archive only)</a> (doy-lee.github.io/luneaustralia) </li>
-                            <li> <a href="https://www.youtube.com/watch?v=AUozUZ8aY7g">Trailer</a> (youtube.com/watch?v=AUozUZ8aY7g) </li>
-                        </ul>
+                <div>
+                    <div class=job-role>
+                        <p class=job-role-year>2014 - 2017</p>
+                        <p>B. Computer Science, University of New South Wales</p>
                     </div>
-
                 </div>
-            </div> <!-- index_projects_math_masher -->
-
-            <div class="index_divider"></div>
-
-            <div id="index_projects_dchip8">
-                <div class="index_projects_header">
-                    <h2>DCHIP8 (2017) - CHIP8 Interpreter</h2>
-                </div>
-
-                <div class="index_projects_preview_images" id="index_projects_preview_images_dchip8">
-                    <img src="img/projects_dchip8_screen_1.png">
-                    <img src="img/projects_dchip8_screen_2.png">
-                </div>
-
-                <div class="index_projects_content">
-                    <div class="index_projects_content_section">
-                        <h3>SUMMARY</h3>
-                        <p>DCHIP8 aims to emulate the CHIP8 architecture to
-                        better understand at a lower level operations between
-                        memory, cpu, input and output.</p>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>MILESTONES/RESEARCH</h3>
-                        <ul>
-                            <li>Fetch, Decode, Execute Opcodes</li>
-                            <li>Modelling memory, registers and basic CPU architecture</li>
-                            <li>Software Rendering and interaction with Win32</li>
-                            <li>Minimal dependencies, single file executable</li>
-                        </ul>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>LINKS</h3>
-                        <ul>
-                            <li> <a href="https://github.com/Doy-lee/dchip-8">Github</a> (github.com/Doy-lee/dchip-8) </li>
-                            <li> <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">Specification Sheet</a> (devernay.free.fr/hacks/chip8/C8TECH10.htm) </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div> <!-- index_projects_math_masher -->
-
-            <div class="index_divider"></div>
-
-            <div id="index_projects_dengine">
-                <div class="index_projects_header" id="index_projects_dengine_header">
-                    <h2>DENGINE (2016) - Basic 2D Engine</h2>
-                </div>
-
-                <div class="index_projects_preview_images" id="index_projects_preview_images_dengine">
-                    <img src="img/projects_dengine_screen_1.png">
-                    <img src="img/projects_dengine_demo.gif">
-                </div>
-
-                <div class="index_projects_content">
-                    <div class="index_projects_content_section">
-                        <h3>SUMMARY</h3>
-                        <p>Dengine is a solo project, 2D game engine developed
-                        with OpenGL and low-level libraries in C. The main goal
-                        of Dengine is to facilitate learning from many aspects
-                        of Computer Science.  Alongside Dengine, Asteroids is
-                        being built which guides the development of features for
-                        the game. Dengine is inspired by Handmade Hero, with
-                        a focus on developing as many features with minimal
-                        libraries, such that it is not too time-consuming and
-                        counter-productive to do so.</p>
-                    </div>
-
-                    <div class="index_projects_content_section">
-                        <h3>MILESTONES/RESEARCH</h3>
-                        <p>Features/research that have been implemented at one point in the making of the engine.</p>
-                        <ul>
-                            <li>Asset Management (load data into intermediate representations)</li>
-                            <li>Audio API from OpenAL</li>
-                            <li>Basic 2D Game Mathematics/Physics (Vector, Trig, Explicit Euler)</li>
-                            <li>Collision Detection (Single Axis Theorem, Minkowski Sum/Diff, AABB)</li>
-                            <li>Debug Services & Displays</li>
-                            <li>Entity Component Systems</li>
-                            <li>IMGUI Systems</li>
-                            <li>Input Parsing</li>
-                            <li>Push-Buffer Memory Systems</li>
-                            <li>Small Size Array Optimisations</li>
-                            <li>Standard Library Replacements (e.g. atoi, strlen, itoa, string)</li>
-                            <li>Texture Atlas Support, Runtime Font Packing</li>
-                            <li>OpenGL 2D Rendering Pipeline & Batching Render Calls</li>
-                        </ul>
-                    </div> <!-- index_projects_content_section -->
-
-                    <div class="index_projects_content_section">
-                        <h3>LINKS</h3>
-                        <ul>
-                            <li> <a href="https://github.com/Doy-lee/Dengine">Github</a> (github.com/Doy-lee/Dengine) </li>
-                        </ul>
-                    </div>
-
-                </div> <!-- index_projects_content -->
-            </div> <!-- index_projects_dengine -->
-            <div class="index_divider"></div>
-        <footer id="index_footer">
-        </footer>
-    </body> <!-- index_wrapper -->
+            </section>
+        </main>
+    </body>
 </html>
