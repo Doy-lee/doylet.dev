@@ -5,13 +5,28 @@
             html {
               font-family: sans-serif;
               font-size: 10pt;
-              color: #020229
+              color: rgba(2, 2, 41, 1);
+            }
+
+            a {
+              text-decoration: none;
+              color: rgba(2, 2, 41, 1);
+              background-color: rgba(0, 0, 0, 0.07)
+            }
+
+            a:visited {
+              color: rgba(2, 2, 41, 0.75);
+            }
+
+            a:hover {
+              color: rgba(2, 2, 41, 1);
+              background-color: rgba(0, 0, 0, 0.3)
             }
 
             body {
-                margin: 2rem 2rem;
-                max-width: 80ch;
-                background: #fbfbfd;
+              margin: 2rem 2rem;
+              max-width: 80ch;
+              background: #fbfbfd;
             }
 
             h1,
@@ -25,94 +40,176 @@
             }
 
             p {
-                margin: 0.75em 0;
+              margin: 0.75em 0;
+            }
+
+            section {
+              margin-top: 0.5em;
+              margin-bottom: 0.5em;
             }
 
             .divider {
-                height: 0.1rem;
-                width: 100%;
-                background: #020229;
+              height: 0.1rem;
+              width: 100%;
+              background: #020229;
+            }
+
+            .contact-links: {
+              margin-bottom: 0.5em;
+            }
+
+            .citations {
+              border-radius: 0.2em;
+              padding: 0.5em;
+              color: rgba(0, 0, 0, 0.8);
+              border-style: dotted;
+              border-color: rgba(0, 0, 0, 0.07);
+            }
+
+            .contact-row {
+              display: flex;
+              flex-direction: row;
+            }
+
+            .contact-row p {
+              margin: 0;
+              padding: 0;
+            }
+
+            .contact-row-key {
+              width: 9ch;
             }
 
             .job-role {
-                display: flex;
-                flex-direction: row;
+              display: flex;
+              flex-direction: row;
+              border-left: 0.3em;
+              border-right: 0;
+              border-top: 0;
+              border-bottom: 0.1em;
+              border-style: solid;
+              padding-bottom: 0.6em;
+              padding-left: 0.4em;
+              background-color: rgba(0,0,0,0.03);
             }
 
             ul {
-                list-style: none;
-                padding: 0;
+              list-style: none;
+              padding: 0;
             }
 
             .job-role p {
-                margin-bottom: 0;
+              margin-bottom: 0;
+              font-weight: bold;
             }
 
             .job-role-year {
-                width: 13ch;
+              width: 13ch;
+            }
+
+            .title-note {
+              font-size: 1.4rem;
+              font-style: normal;
+              font-family: monospace;
+              vertical-align: middle;
+            }
+
+            .favicon {
+              width: 1em;
+              height: 1em;
+              vertical-align: text-bottom;
+            }
+
+            .milestones {
+                list-style: circle;
+                font-size: 1rem;
+                margin-left: 1.5rem;
             }
 
         </style>
     </head>
     <body>
         <header>
-            <div>
-                <h1>Doyle T.</h1>
+            <div style="">
+                <h1><a href="https://cv.doylet.dev">doy<u style="text-decoration: none; color: #6BBAE4">-</u>lee <em class=title-note>// TODO: Doyle T.</em> </a></h1>
                 <p>G'day, I'm a software developer that enjoys low-level programming.</p>
             </div>
+            <div class=divider style="margin-bottom: 0.5em"></div>
         </header>
         <main>
             <section aria-label="Contact Links">
-                <h2>Links</h2>
-                <div class=divider></div>
-                <ul class=contact-links>
-                    <li>CV <a href="cv.doylet.dev">cv.doylet.dev</a></li>
-                    <li>Email <a href="cv.doylet.2380i@simplelogin.com">cv.doylet.2380i@simplelogin.com</a></li>
-                    <li>Github <a href="https://github.com/doy-lee">https://github.com/doy-lee</a></li>
-                </ul>
+                <div class=contact-row>
+                    <p class=contact-row-key>Print Me!</p>
+                    <p><a href="doylet.dev/doylet_cv.pdf">doylet.dev/doylet_cv.pdf</a></p>
+                </div>
+                <div class=contact-row>
+                    <p class=contact-row-key>Email</p>
+                    <p><a href="cv.doylet.2380i@simplelogin.com">cv.doylet.2380i@simplelogin.com</a></p>
+                </div>
+                <div class=contact-row>
+                    <p class=contact-row-key>GitHub</p>
+                    <p><a href="https://github.com/doy-lee">https://github.com/doy-lee</a></p>
+                </div>
             </section>
-            <section aria-label="Tenure">
-                <h2>Tenure</h2>
-                <div class=divider></div>
+            <section aria-label="Work">
+                <h2>Work</h2>
+                <div class=divider style="margin-bottom: 0.5em"></div>
                 <div>
-                    <div class=job-role>
+                    <div class=job-role style="border-color: #C16358">
                         <p class=job-role-year>2022 - Present</p>
-                        <p>C++ Senior Software Engineer, Agent Orientated Software (AI)</p>
+                        <p>C++ Senior Software Engineer, Agent Orientated Software <img class=favicon src="aos-favicon.ico"> (AI)</p>
                     </div>
-                </div>
-                <div>
-                    <div class=job-role>
+                    <div class=job-role style="border-color: #BEBF5E">
                         <p class=job-role-year>2020 - 2022</p>
-                        <p>C++ Software Engineer, Agent Orientated Software (AI)</p>
+                        <p>C++ Software Engineer, Agent Orientated Software <img class=favicon src="aos-favicon.ico"> (AI)</p>
                     </div>
+                    <sub><i>C++17, CMake, Docker, DDS+Kafka (distribution), discrete event simulators (game engine-esque)</i></sub>
                     <p>
-                        AOS creates tools for creating trustable and explainable
-                        AI using multi-agent architecture and the cognitive
-                        framework Beliefs, Desires, Intentions (BDI). My role
-                        involves improving AI toolchain such as improving
-                        cross-agent collaboration, forward planning, scheduling
-                        and deconflicting intention execution and distributed
-                        agent communication to improve resilience in adversarial
-                        situations.
+                        AOS creates creating trustable and explainable
+                        AI using <i>multi-agent systems</i> with the cognitive
+                        framework, <i>Beliefs, Desires and Intentions</i> (BDI).
+                        My role involves improving the AI toolchain such as
+                        improving cross-agent collaboration, forward planning,
+                        scheduling and deconflicting of agent intentionality,
+                        its execution and distributed agent communication to
+                        improve resilience in adversarial situations.
                     </p>
-                    <p>
-                    </p>
+                    <ul class=milestones>
+                        <li>Coordinating multiple toolchain upgrades of our in-house AI frameworks, end-to-end</li>
+                        <li>Added virtual-memory backed allocators for cache locality, reduced syscalls and memory profiling</li>
+                        <li>Co-implement protocol to distribute agents onto different routing technologies (DDS & Kafka)</li>
+                        <li>Responsible for the docs website with APIs & manuals, end-to-end for production releases</li>
+                        <li>Implement multiple discrete event simulators for verification of agent behaviours</li>
+                        <li>Documenting best practices, patterns and tutorials for designing effective multi-agent systems</li>
+                        <li>Implement real-world system specs in a multi-agent architecture to highlight deficiencies in the development methodology leading to new protocols, e.g. researching interfaces for humans to effectively contribute into the agent decision making.</li>
+                    </ul>
+                    <small>
+                        <ul class=citations>
+                            <li>Agent Orientated Software <a href="https://aosgrp.com">aosgrp.com</a></li>
+                        </ul>
+                    </small>
                 </div>
                 <div>
-                    <div class=job-role>
+                </div>
+                <div>
+                    <div class=job-role style="border-color: #8DBCA2">
                         <p class=job-role-year>2018 - 2020</p>
-                        <p>C++ Software Engineer, Oxen (Blockchain)</p>
+                        <p>C++ Software Engineer, Oxen <img class=favicon src="oxen-favicon-32x32.png"> (Blockchain)</p>
                     </div>
+                    <sub><i>C++14, Boost, CMake, Docker, Android+Windows+Mac+Linux clients, Qt5, Monero Cryptonote & EPEE Levin P2P Protocol, Open Source Maintainer (Oxen), Libsodium (EC Cryptography)</i></sub>
                     <p>
                         Oxen is a non-for-profit, open-source company developing
-                        privacy protocols and tools. I implemented
+                        privacy protocols and tools. I
+                        implemented[<a href="#oxen-git-commits">1</a>]
                         a decentralized layer of servers known as the Service
-                        Node[1] network that distributes the blockchain and
-                        maintains layer access-control. They coordinate
-                        peer-to-peer to evict underperforming and malicious
-                        peers whilst generating entropy for securing blocks
-                        using checkpointing[2] and a commit-reveal scheme known
-                        as Pulse[3].
+                        Node[<a href="#oxen-service-nodes">2</a>] network that
+                        distributes the blockchain and maintains layer
+                        access-control. They coordinate peer-to-peer to evict
+                        underperforming and malicious peers whilst generating
+                        entropy for securing blocks using
+                        checkpointing[<a href="#oxen-checkpointing">3</a>] and
+                        a commit-reveal scheme known as
+                        Pulse[<a href="#oxen-pulse#">4</a>].
                     </p>
                     <p>
                         With over 1k+ servers and growing, the Service Node
@@ -120,28 +217,52 @@
                         facilitate a privacy preserving onion routing network,
                         Lokinet, and, a privacy preserving messenger, Session.
                     </p>
-                    <ul>
-                        <li>[1] Service Nodes <a href="https://oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes">oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes</a></li>
-                        <li>[2] Checkpointing <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md</a></li>
-                        <li>[3] Pulse <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md</a></li>
+                    <ul class=milestones>
+                        <li>Rapidly learning & upskilling as their first developer in the startup to form a development methodology and hiring practices</li>
+                        <li>Implement a resilient server layer over new P2P gossip protocols: node de/registration & rewards, service metrics & voting</li>
+                        <li>Form immutable checkpoints to secure blocks using shared consensus to provide faster finalization of transfers on the network</li>
+                        <li>Create an on-chain DNS registry to map cryptogaphic keys to human readable aliases (e.g. Lokinet domains, Oxen wallets and Session aliases)</li>
+                        <li>Transition from Proof of Work to Proof of Stake live in production, deprecates miners for a commit-reveal scheme to generate entropy for minting blocks</li>
+                        <li>Ownership of release process (build/package/distribute) end to end.</li>
+                        <li>Patching of 0-days and exploits & recovering from consensus failure on a live production network</li>
+                        <li>Improved the test framework for including re-write of Monero's framework and adding integration tests using IPC over named pipes</li>
                     </ul>
+                    <small>
+                        <ul class=citations>
+                            <li>Oxen Website <a href="https://oxen.io">oxen.io</a></li>
+                            <li id="oxen-git-commits">[1] Git Commits <a href="https://github.com/oxen-io/oxen-core/pulls?q=is%3Apr+author%3Adoy-lee+is%3Aclosed+">github.com/oxen-io/oxen-core/pulls?q=is%3Apr+author%3Adoy-lee+is%3Aclosed</a></li>
+                            <li id="oxen-service-nodes">[2] Service Nodes <a href="https://oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes">oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes</a></li>
+                            <li id="oxen-checkpointing">[3] Checkpointing <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md</a></li>
+                            <li id="oxen-pulse">[4] Pulse <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md</a></li>
+                        </ul>
+                    </small>
                 </div>
                 <div>
-                    <div class=job-role>
+                    <div class=job-role style="border-color: #519A8B">
                         <p class=job-role-year>2017 - 2017</p>
-                        <p>C++ Intern Software Engineer, Wargaming Sydney (Game Dev)</p>
+                        <p>C++ Intern Software Engineer, Wargaming Sydney <img class=favicon src="wargaming-favicon.ico"> (Game Dev)</p>
                     </div>
                     <p>
                         Game development company most popular for developing
                         World of Tanks. I was in the tools team assisting with
                         the development of the editor for the asset pipeline.
                     </p>
+                    <small>
+                        <ul class=citations>
+                            <li>Wargaming Sydney <a href="https://wargaming.com/">wargaming.com</a></li>
+                        </ul>
+                    </small>
                 </div>
                 <div>
-                    <div class=job-role>
+                    <div class=job-role style="border-color: #DBAE55">
                         <p class=job-role-year>2014 - 2017</p>
-                        <p>B. Computer Science, University of New South Wales</p>
+                        <p>B. Computer Science, University of New South Wales <img class=favicon src="unsw-icon-192x192.png"></p>
                     </div>
+                    <small>
+                        <ul class=citations>
+                            <li>UNSW <a href="https://unsw.edu.au">unsw.edu.au</a></li>
+                        </ul>
+                    </small>
                 </div>
             </section>
         </main>
