@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang=en-us>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             html {
               font-family: sans-serif;
@@ -24,9 +25,11 @@
             }
 
             body {
-              margin: 2rem 2rem;
-              max-width: 80ch;
+              margin-top: 1rem;
+              margin-left: 1rem;
+              margin-left: 1rem;
               background: #fbfbfd;
+              max-width: 80ch;
             }
 
             img {
@@ -85,14 +88,13 @@
             }
 
             .job-role {
-              display: flex;
-              flex-direction: row;
               border-left: 0.3em;
               border-right: 0;
               border-top: 0;
               border-bottom: 0.1em;
               border-style: solid;
-              padding-bottom: 0.6em;
+              padding-top: 0.1em;
+              padding-bottom: 0.2em;
               padding-left: 0.4em;
               background-color: rgba(0,0,0,0.03);
             }
@@ -119,15 +121,14 @@
             }
 
             .favicon {
-              width: 1em;
-              height: 1em;
+              height: 16px;
               vertical-align: text-bottom;
             }
 
             .milestones {
-                list-style: circle;
-                font-size: 1rem;
-                margin-left: 1.5rem;
+              list-style: circle;
+              font-size: 1rem;
+              margin-left: 1.5rem;
             }
 
             @media print {
@@ -175,12 +176,10 @@
                 <div class=divider style="margin-bottom: 0.5em"></div>
                 <div>
                     <div class=job-role style="border-color: #C16358">
-                        <p class=job-role-year>2022 - Present</p>
-                        <p>C++ Senior Software Engineer, Agent Orientated Software <img class=favicon src="aos-favicon.ico"> (AI)</p>
+                        <p>2022 - CURR: C++ Senior Software Engineer, Agent Orientated Software <img class=favicon src="aos-favicon.ico"> (AI)</p>
                     </div>
                     <div class=job-role style="border-color: #BEBF5E">
-                        <p class=job-role-year>2020 - 2022</p>
-                        <p>C++ Software Engineer, Agent Orientated Software <img class=favicon src="aos-favicon.ico"> (AI)</p>
+                        <p>2020 - 2022: C++ Software Engineer, Agent Orientated Software <img class=favicon src="aos-favicon.ico"> (AI)</p>
                     </div>
                     <sub><i>C++17, CMake, Docker, DDS+Kafka (distribution), discrete event simulators (game engine-esque)</i></sub>
                     <p>
@@ -212,8 +211,7 @@
                 </div>
                 <div>
                     <div class=job-role style="border-color: #8DBCA2">
-                        <p class=job-role-year>2018 - 2020</p>
-                        <p>C++ Software Engineer, Oxen <img class=favicon src="oxen-favicon-32x32.png"> (Blockchain)</p>
+                        <p>2018 - 2020: C++ Software Engineer, Oxen <img class=favicon src="oxen-favicon-32x32.png"> (Blockchain)</p>
                     </div>
                     <sub><i>C++14, Boost, CMake, Docker, Android+Windows+Mac+Linux clients, Qt5, Monero Cryptonote & EPEE Levin P2P Protocol, Open Source Maintainer (Oxen), Libsodium (EC Cryptography)</i></sub>
                     <p>
@@ -258,8 +256,7 @@
                 </div>
                 <div>
                     <div class=job-role style="border-color: #519A8B">
-                        <p class=job-role-year>2017 - 2017</p>
-                        <p>C++ Intern Software Engineer, Wargaming Sydney <img class=favicon src="wargaming-favicon.ico"> (Game Dev)</p>
+                        <p>2017: C++ Intern Software Engineer, Wargaming Sydney <img class=favicon src="wargaming-favicon.ico"> (Game Dev)</p>
                     </div>
                     <p>
                         Game development company most popular for developing
@@ -274,8 +271,7 @@
                 </div>
                 <div>
                     <div class=job-role style="border-color: #DBAE55">
-                        <p class=job-role-year>2014 - 2017</p>
-                        <p>B. Computer Science, University of New South Wales <img class=favicon src="unsw-icon-192x192.png"></p>
+                        <p>2014 - 2017: B. Computer Science, University of New South Wales <img class=favicon src="unsw-icon-192x192.png"></p>
                     </div>
                     <small>
                         <ul class=citations>
@@ -288,32 +284,25 @@
                 <h2>Projects Summary</h2>
                 <div class=divider style="margin-bottom: 0.5em"></div>
                 <div class=job-role style="border-color: #C16358">
-                    <p class=job-role-year>2018 - Present</p>
-                    <p><a href="#dqn-project">Dqn</a>: C/C++ personal standard library <a href="https://github.com/doy-lee/dqn">github.com/doy-lee/dqn</a></p>
+                    <p>2018 - CURR: <a href="#dqn-project">Dqn</a> C/C++ personal standard library <a href="https://github.com/doy-lee/dqn">github.com/doy-lee/dqn</a></p>
                 </div>
                 <div class=job-role style="border-color: #BEBF5E">
-                    <p class=job-role-year>2021</p>
-                    <p><a href="#intc-project">intc</a>: Software u128/256 bit port to C <a href="https://github.com/doy-lee/intc">github.com/doy-lee/intc</a></p>
+                    <p>2021: <a href="#intc-project">intc</a> Software u128/256 bit port to C <a href="https://github.com/doy-lee/intc">github.com/doy-lee/intc</a></p>
                 </div>
                 <div class=job-role style="border-color: #8DBCA2">
-                    <p class=job-role-year>2020</p>
-                    <p><a href="#raylibsimd-project">RaylibSIMD</a>: SIMD Software rendering in C <a href="https://github.com/doy-lee/RaylibSIMD">github.com/doy-lee/RaylibSIMD</a></p>
+                    <p>2020: <a href="#raylibsimd-project">RaylibSIMD</a> SIMD Software rendering in C <a href="https://github.com/doy-lee/RaylibSIMD">github.com/doy-lee/RaylibSIMD</a></p>
                 </div>
                 <div class=job-role style="border-color: #519A8B">
-                    <p class=job-role-year>2017</p>
-                    <p><a href="#dtrenderer-project">DTRenderer</a>: 3D Software rendering in C++ <a href="https://github.com/doy-lee/DTRenderer">github.com/doy-lee/DTRenderer</a></p>
+                    <p>2017: <a href="#dtrenderer-project">DTRenderer</a> 3D Software rendering in C++ <a href="https://github.com/doy-lee/DTRenderer">github.com/doy-lee/DTRenderer</a></p>
                 </div>
                 <div class=job-role style="border-color: #DBAE55">
-                    <p class=job-role-year>2017</p>
-                    <p><a href="#mathmasher-project">Math Masher</a>: Math game for mobile <a href="https://doy-lee.github.io/luneaustralia">doy-lee.github.io/luneaustralia</a></p>
+                    <p>2017: <a href="#mathmasher-project">Math Masher</a> Math game for mobile <a href="https://doy-lee.github.io/luneaustralia">doy-lee.github.io/luneaustralia</a></p>
                 </div>
                 <div class=job-role style="border-color: #C16358">
-                    <p class=job-role-year>2017</p>
-                    <p><a href="#dchip8-project">DCHIP8</a>: Chip8 interpreter <a href="https://github.com/doy-lee/dchip-8">github.com/doy-lee/dchip-8</a></p>
+                    <p>2017: <a href="#dchip8-project">DCHIP8</a> Chip8 interpreter <a href="https://github.com/doy-lee/dchip-8">github.com/doy-lee/dchip-8</a></p>
                 </div>
                 <div class=job-role style="border-color: #C16358">
-                    <p class=job-role-year>2016</p>
-                    <p><a href="#dengine-project">Dengine</a>: 2D engine for asteroids <a href="https://github.com/doy-lee/dengine">github.com/doy-lee/dengine</a></p>
+                    <p>2016: <a href="#dengine-project">Dengine</a> 2D engine for asteroids <a href="https://github.com/doy-lee/dengine">github.com/doy-lee/dengine</a></p>
                 </div>
             </section>
             <section class=pagebreak aria-label="Projects">
@@ -321,8 +310,7 @@
                 <div class=divider style="margin-bottom: 0.5em"></div>
                 <div id=dqn-project>
                     <div class=job-role style="border-color: #C16358">
-                        <p class=job-role-year>2018 - Present</p>
-                        <p>Dqn: C/C++ personal standard library <a href="https://github.com/doy-lee/dqn">github.com/doy-lee/dqn</a></p>
+                        <p>2018: Dqn C/C++ personal standard library <a href="https://github.com/doy-lee/dqn">github.com/doy-lee/dqn</a></p>
                     </div>
                     <p>
                         My personal standard library used in personal projects
@@ -342,8 +330,7 @@
                 </div>
                 <div id=intc-project>
                     <div class=job-role style="border-color: #BEBF5E">
-                        <p class=job-role-year>2020</p>
-                        <p>intc: Software u128/256 bit port to C <a href="https://github.com/doy-lee/intc">github.com/doy-lee/intc</a></p>
+                        <p>2020: intc Software u128/256 bit port to C <a href="https://github.com/doy-lee/intc">github.com/doy-lee/intc</a></p>
                     </div>
                     <sub><i>C99/C++, Open Source, Single File Library Port</i></sub>
                     <p>
@@ -361,8 +348,7 @@
                 </div>
                 <div id=raylibsimd-project>
                     <div class=job-role style="border-color: #8DBCA2">
-                        <p class=job-role-year>2020</p>
-                        <p>RaylibSIMD: SIMD Software rendering in C <a href="https://github.com/doy-lee/RaylibSIMD">github.com/doy-lee/RaylibSIMD</a></p>
+                        <p>2020: RaylibSIMD SIMD Software rendering in C <a href="https://github.com/doy-lee/RaylibSIMD">github.com/doy-lee/RaylibSIMD</a></p>
                     </div>
                     <sub><i>C99, SSE2, Graphics Programming</i></sub>
                     <p>
@@ -381,8 +367,7 @@
                 </div>
                 <div id=dtrenderer-project>
                     <div class=job-role style="border-color: #519A8B">
-                        <p class=job-role-year>2017</p>
-                        <p>DTRenderer: 3D Software rendering in C++ <a href="https://github.com/doy-lee/DTRenderer">github.com/doy-lee/DTRenderer</a></p>
+                        <p>2017: DTRenderer 3D Software rendering in C++ <a href="https://github.com/doy-lee/DTRenderer">github.com/doy-lee/DTRenderer</a></p>
                     </div>
                     <a href="img/projects_dtrenderer.gif"><img src="img/projects_dtrenderer.gif"></a>
                     <p>
@@ -410,8 +395,7 @@
                 </div>
                 <div id=mathmasher-project>
                     <div class=job-role style="border-color: #DBAE55">
-                        <p class=job-role-year>2017</p>
-                        <p>Math Masher: Math game for mobile <a href="https://doy-lee.github.io/luneaustralia">doy-lee.github.io/luneaustralia</a></p>
+                        <p>2017: Math Masher Math game for mobile <a href="https://doy-lee.github.io/luneaustralia">doy-lee.github.io/luneaustralia</a></p>
                     </div>
                     <div class=row>
                         <a href="img/projects_math_masher_screen_1.png"><img src="img/projects_math_masher_screen_1.jpg"></a>
@@ -442,8 +426,7 @@
                 </div>
                 <div id=dchip8-project>
                     <div class=job-role style="border-color: #C16358">
-                        <p class=job-role-year>2017</p>
-                        <p>DCHIP8: Chip8 interpreter <a href="https://github.com/doy-lee/dchip-8">github.com/doy-lee/dchip-8</a></p>
+                        <p>2017: DCHIP8 Chip8 interpreter <a href="https://github.com/doy-lee/dchip-8">github.com/doy-lee/dchip-8</a></p>
                     </div>
                     <div class="row">
                         <a href="img/projects_dchip8_screen_1.png"><img src="img/projects_dchip8_screen_1.png"></a>
@@ -468,8 +451,7 @@
                 </div>
                 <div id=dengine-project>
                     <div class=job-role style="border-color: #C16358">
-                        <p class=job-role-year>2016</p>
-                        <p>Dengine: 2D engine for asteroids <a href="https://github.com/doy-lee/dengine">github.com/doy-lee/dengine</a></p>
+                        <p>2016: Dengine 2D engine for asteroids <a href="https://github.com/doy-lee/dengine">github.com/doy-lee/dengine</a></p>
                     </div>
                     <div class="row">
                         <a href="img/projects_dengine_screen_1.png"><img src="img/projects_dengine_screen_1.png"></a>
