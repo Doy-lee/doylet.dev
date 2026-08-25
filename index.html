@@ -1,499 +1,617 @@
 <!doctype html>
-<html lang=en-us>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            html {
-              font-family: sans-serif;
-              font-size: 10pt;
-              color: rgba(2, 2, 41, 1);
-            }
+<html lang="en-us">
+<head>
+  <title>doylet.dev</title>
+  <style>
+    html {
+      font-family: sans-serif;
+      color:       rgba(2, 2, 41, 1);
+      margin:      0 auto;
+      max-width:   1024px;
+    }
 
-            a {
-              text-decoration: none;
-              color: rgba(2, 2, 41, 1);
-              background-color: rgba(0, 0, 0, 0.07)
-            }
+    a {
+      text-decoration: none;
+      color: rgba(2, 2, 41, 1);
+      background-color: rgba(0, 0, 0, 0.07)
+    }
 
-            a:visited {
-              color: rgba(2, 2, 41, 0.75);
-            }
+    a:visited  { color: rgba(2, 2, 41, 0.75); }
+    a:hover    { color: rgba(2, 2, 41, 1); background-color: rgba(0, 0, 0, 0.3) }
+    img        { max-width: 100%; }
+    hr         { border: none; height: 2px; background-color: lightgrey; width: 100%; margin: 30px auto; }
+    p          { margin: 0.75em 0; }
+    .citations { padding: 8px; border-radius: 0.2em; border-style: dotted; border-color: rgba(0, 0, 0, 0.2); }
+    .job-role  {
+      border-left:      0.3em;
+      border-right:     0;
+      border-top:       0;
+      border-bottom:    0;
+      border-style:     solid;
+      padding-top:      0.5em;
+      padding-bottom:   0.5em;
+      padding-left:     0.4em;
+      font-weight:      bold;
+    }
 
-            a:hover {
-              color: rgba(2, 2, 41, 1);
-              background-color: rgba(0, 0, 0, 0.3)
-            }
+    .job-tech li {
+      border: 1px dashed;
+      padding: 0.25em;
+      margin-bottom: 0.5em;
+      margin-right: 0.25em;
+      border-radius: 4px;
+      display: inline-block;
+    }
 
-            body {
-              margin-top: 1rem;
-              margin-left: 1rem;
-              margin-left: 1rem;
-              background: #fbfbfd;
-              max-width: 80ch;
-            }
+    ul { list-style: none; padding: 0; }
 
-            img {
-                max-width: 100%;
-            }
+    .title-note {
+      font-size: 1.4rem;
+      font-style: normal;
+      font-family: monospace;
+      vertical-align: middle;
+    }
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-              padding: 0;
-              margin: 0;
-            }
+    .favicon       { height: 16px; vertical-align: text-bottom; padding-left: 0.5em; padding-right: 0.5em; }
+    .bullet-points { list-style: circle; margin-left: 1.5rem; }
 
-            p {
-              margin: 0.75em 0;
-            }
-
-            section {
-              margin-top: 0.5em;
-              margin-bottom: 0.5em;
-            }
-
-            .divider {
-              height: 0.1rem;
-              width: 100%;
-              background: #020229;
-            }
-
-            .contact-links: {
-              margin-bottom: 0.5em;
-            }
-
-            .citations {
-              border-radius: 0.2em;
-              padding: 0.5em;
-              color: rgba(0, 0, 0, 0.8);
-              border-style: dotted;
-              border-color: rgba(0, 0, 0, 0.07);
-            }
-
-            .row {
-              display: flex;
-              flex-direction: row;
-            }
-
-            .row p {
-              margin: 0;
-              padding: 0;
-            }
-
-            .row-key {
-              width: 9ch;
-            }
-
-            .job-role {
-              border-left: 0.3em;
-              border-right: 0;
-              border-top: 0;
-              border-bottom: 0.1em;
-              border-style: solid;
-              padding-top: 0.1em;
-              padding-bottom: 0.2em;
-              padding-left: 0.4em;
-              background-color: rgba(0,0,0,0.03);
-            }
-
-            ul {
-              list-style: none;
-              padding: 0;
-            }
-
-            .job-role p {
-              margin-bottom: 0;
-              font-weight: bold;
-            }
-
-            .job-role-year {
-              width: 13ch;
-            }
-
-            .title-note {
-              font-size: 1.4rem;
-              font-style: normal;
-              font-family: monospace;
-              vertical-align: middle;
-            }
-
-            .favicon {
-              height: 16px;
-              vertical-align: text-bottom;
-            }
-
-            .milestones {
-              list-style: circle;
-              font-size: 1rem;
-              margin-left: 1.5rem;
-            }
-
-            @media print {
-                .pagebreak {
-                    page-break-before: always;
-                }
-            }
+    @media print {
+      .pagebreak {
+        page-break-before: always;
+      }
+    }
 
 
-        </style>
-    </head>
-    <body>
-        <!--
-            Color palette
-            #C16358
-            #BEBF5E
-            #8DBCA2
-            #519A8B
-            #DBAE55
-        -->
-        <header>
-            <div style="">
-                <h1><a href="https://doylet.dev">doy<u style="text-decoration: none; color: #6BBAE4">-</u>lee <em class=title-note>// TODO: Doyle T.</em> </a></h1>
-                <p>G'day, I'm a software developer that enjoys low-level programming.</p>
-            </div>
-            <div class=divider style="margin-bottom: 0.5em"></div>
-        </header>
-        <main>
-            <section aria-label="Contact Links">
-                <div class=row>
-                    <p class=row-key>Print Me!</p>
-                    <p><a href="doylet_cv.pdf">doylet.dev/doylet_cv.pdf</a></p>
-                </div>
-                <div class=row>
-                    <p class=row-key>Email</p>
-                    <p><a href="cv.doylet.2380i@simplelogin.com">cv.doylet.2380i@simplelogin.com</a></p>
-                </div>
-                <div class=row>
-                    <p class=row-key>Gitea</p>
-                    <p><a href="git.doylet.dev">https://git.doylet.dev</a></p>
-                </div>
-                <div class=row>
-                    <p class=row-key>GitHub</p>
-                    <p><a href="https://github.com/doy-lee">https://github.com/doy-lee</a></p>
-                </div>
-            </section>
-            <section aria-label="Work">
-                <h2>Work</h2>
-                <div class=divider style="margin-bottom: 0.5em"></div>
-                <div>
-                    <div class=job-role style="border-color: #C16358">
-                        <p>2022 - CURR: C++ Senior Software Engineer, Agent Orientated Software <img class=favicon src="assets/aos-favicon.ico"> (AI)</p>
-                    </div>
-                    <div class=job-role style="border-color: #BEBF5E">
-                        <p>2020 - 2022: C++ Software Engineer, Agent Orientated Software <img class=favicon src="assets/aos-favicon.ico"> (AI)</p>
-                    </div>
-                    <sub><i>C++17, CMake, Docker, DDS+Kafka (distribution), discrete event simulators (game engine-esque)</i></sub>
-                    <p>
-                        AOS creates creating trustable and explainable
-                        AI using <i>multi-agent systems</i> with the cognitive
-                        framework, <i>Beliefs, Desires and Intentions</i> (BDI).
-                        My role involves improving the AI toolchain such as
-                        improving cross-agent collaboration, forward planning,
-                        scheduling and de-conflicting of agent intentionality,
-                        its execution and distributed agent communication to
-                        improve resilience in adversarial situations.
-                    </p>
-                    <ul class=milestones>
-                        <li>Coordinating multiple toolchain upgrades of our in-house AI frameworks, end-to-end</li>
-                        <li>Added virtual-memory backed allocators for cache locality, reduced sys-calls and memory profiling</li>
-                        <li>Co-implement protocol to distribute agents onto different routing technologies (DDS & Kafka)</li>
-                        <li>Responsible for the docs website with APIs & manuals, end-to-end for production releases</li>
-                        <li>Implement multiple discrete event simulators for verification of agent behaviours</li>
-                        <li>Documenting best practices, patterns and tutorials for designing effective multi-agent systems</li>
-                        <li>Implement real-world system specs in a multi-agent architecture to highlight deficiencies in the development methodology leading to new protocols, e.g. researching interfaces for humans to effectively contribute into the agent decision making.</li>
-                    </ul>
-                    <small>
-                        <ul class=citations>
-                            <li>Agent Orientated Software <a href="https://aosgrp.com">aosgrp.com</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div>
-                </div>
-                <div>
-                    <div class=job-role style="border-color: #8DBCA2">
-                        <p>2018 - 2020: C++ Software Engineer, Oxen <img class=favicon src="assets/oxen-favicon-32x32.png"> (Blockchain)</p>
-                    </div>
-                    <sub><i>C++14, Boost, CMake, Docker, Android+Windows+Mac+Linux clients, Qt5, Monero Cryptonote & EPEE Levin P2P Protocol, Open Source Maintainer (Oxen), Libsodium (EC Cryptography)</i></sub>
-                    <p>
-                        Oxen is a non-for-profit, open-source company developing
-                        privacy protocols and tools. I
-                        implemented[<a href="#oxen-git-commits">1</a>]
-                        a decentralized layer of servers known as the Service
-                        Node[<a href="#oxen-service-nodes">2</a>] network that
-                        distributes the blockchain and maintains layer
-                        access-control. They coordinate peer-to-peer to evict
-                        underperforming and malicious peers whilst generating
-                        entropy for securing blocks using
-                        checkpointing[<a href="#oxen-checkpointing">3</a>] and
-                        a commit-reveal scheme known as
-                        Pulse[<a href="#oxen-pulse#">4</a>].
-                    </p>
-                    <p>
-                        With over 1k+ servers and growing, the Service Node
-                        network provides a sybil-resistant foundation to
-                        facilitate a privacy preserving onion routing network,
-                        Lokinet, and, a privacy preserving messenger, Session.
-                    </p>
-                    <ul class=milestones>
-                        <li>Rapidly learning & up-skilling as their first developer in the startup to form a development methodology and hiring practices</li>
-                        <li>Implement a resilient server layer over new P2P gossip protocols: node de/registration & rewards, service metrics & voting</li>
-                        <li>Form immutable checkpoints to secure blocks using shared consensus to provide faster finalization of transfers on the network</li>
-                        <li>Create an on-chain DNS registry to map cryptographic keys to human readable aliases (e.g. Lokinet domains, Oxen wallets and Session aliases)</li>
-                        <li>Transition from Proof of Work to Proof of Stake live in production, deprecates miners for a commit-reveal scheme to generate entropy for minting blocks</li>
-                        <li>Ownership of release process (build/package/distribute) end to end.</li>
-                        <li>Patching of 0-days and exploits & recovering from consensus failure on a live production network</li>
-                        <li>Improved the test framework for including re-write of Monero's framework and adding integration tests using IPC over named pipes</li>
-                    </ul>
-                    <small>
-                        <ul class=citations>
-                            <li>Oxen Website <a href="https://oxen.io">oxen.io</a></li>
-                            <li id="oxen-git-commits">[1] Git Commits <a href="https://github.com/oxen-io/oxen-core/pulls?q=is%3Apr+author%3Adoy-lee+is%3Aclosed+">github.com/oxen-io/oxen-core/pulls?q=is%3Apr+author%3Adoy-lee+is%3Aclosed</a></li>
-                            <li id="oxen-service-nodes">[2] Service Nodes <a href="https://oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes">oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes</a></li>
-                            <li id="oxen-checkpointing">[3] Checkpointing <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md</a></li>
-                            <li id="oxen-pulse">[4] Pulse <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div>
-                    <div class=job-role style="border-color: #519A8B">
-                        <p>2017: C++ Intern Software Engineer, Wargaming Sydney <img class=favicon src="assets/wargaming-favicon.ico"> (Game Dev)</p>
-                    </div>
-                    <p>
-                        Game development company most popular for developing
-                        World of Tanks. I was in the tools team assisting with
-                        the development of the editor for the asset pipeline.
-                    </p>
-                    <small>
-                        <ul class=citations>
-                            <li>Wargaming Sydney <a href="https://wargaming.com/">wargaming.com</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div>
-                    <div class=job-role style="border-color: #DBAE55">
-                        <p>2014 - 2017: B. Computer Science, University of New South Wales <img class=favicon src="assets/unsw-icon-192x192.png"></p>
-                    </div>
-                    <small>
-                        <ul class=citations>
-                            <li>UNSW <a href="https://unsw.edu.au">unsw.edu.au</a></li>
-                        </ul>
-                    </small>
-                </div>
-            </section>
-            <section aria-label="Projects Summary">
-                <h2>Projects Summary</h2>
-                <div class=divider style="margin-bottom: 0.5em"></div>
-                <div class=job-role style="border-color: #C16358">
-                    <p>2018 - CURR: <a href="#dqn-project">Dqn</a> C/C++ personal standard library <a href="https://git.doylet.dev/doylet/dqn">git.doylet.dev/doylet/dqn</a></p>
-                </div>
-                <div class=job-role style="border-color: #BEBF5E">
-                    <p>2021: <a href="#intc-project">intc</a> Software u128/256 bit port to C <a href="https://git.doylet.dev/doylet/intc">git.doylet.dev/doylet/intc</a></p>
-                </div>
-                <div class=job-role style="border-color: #8DBCA2">
-                    <p>2020: <a href="#raylibsimd-project">RaylibSIMD</a> SIMD Software rendering in C <a href="https://git.doylet.dev/doylet/RaylibSIMD">git.doylet.dev/doylet/RaylibSIMD</a></p>
-                </div>
-                <div class=job-role style="border-color: #519A8B">
-                    <p>2017: <a href="#dtrenderer-project">DTRenderer</a> 3D Software rendering in C++ <a href="https://git.doylet.dev/doylet/DTRenderer">git.doylet.dev/doylet/DTRenderer</a></p>
-                </div>
-                <div class=job-role style="border-color: #DBAE55">
-                    <p>2017: <a href="#mathmasher-project">Math Masher</a> Math game for mobile <a href="https://doylet.dev/luneaustralia">doylet.dev/luneaustralia</a></p>
-                </div>
-                <div class=job-role style="border-color: #C16358">
-                    <p>2017: <a href="#dchip8-project">DCHIP8</a> Chip8 interpreter <a href="https://git.doylet.dev/doylet/dchip-8">git.doylet.dev/doylet/dchip-8</a></p>
-                </div>
-                <div class=job-role style="border-color: #C16358">
-                    <p>2016: <a href="#dengine-project">Dengine</a> 2D engine for asteroids <a href="https://git.doylet.dev/doylet/dengine">git.doylet.dev/doylet/dengine</a></p>
-                </div>
-            </section>
-            <section class=pagebreak aria-label="Projects">
-                <h2>Projects</h2>
-                <div class=divider style="margin-bottom: 0.5em"></div>
-                <div id=dqn-project>
-                    <div class=job-role style="border-color: #C16358">
-                        <p>2018: Dqn C/C++ personal standard library <a href="https://git.doylet.dev/doylet/dqn">git.doylet.dev/doylet/dqn</a></p>
-                    </div>
-                    <p>
-                        My personal standard library used in personal projects
-                        that focuses on simplicity, transparent data
-                        structures void of crazy C++ features with minimal
-                        dependencies on the standard libraries. The library is
-                        orientated around avoiding unnecessary allocations e.g.
-                        minimal calls to malloc and non-pessimized
-                        implementations.
-                    </p>
-                    <ul class=milestones>
-                        <li>Custom memory routines: arena allocator, virtual memory containers, TLS scratch allocators</li>
-                        <li>Allocation-less string slices and string manipulation routines</li>
-                        <li>Linear probed and chained hash tables in 400~ LOC</li>
-                        <li>Fixed sized arrays and strings containers</li>
-                    </ul>
-                </div>
-                <div id=intc-project>
-                    <div class=job-role style="border-color: #BEBF5E">
-                        <p>2020: intc Software u128/256 bit port to C <a href="https://git.doylet.dev/doylet/intc">git.doylet.dev/doylet/intc</a></p>
-                    </div>
-                    <sub><i>C99/C++, Open Source, Single File Library Port</i></sub>
-                    <p>
-                        intc is a port of calccrypto's uint128/256 library into
-                        a single header file library to allow u128/256
-                        calculations. This port is primarily C first and
-                        provides C++ helpers like operator overloads that are
-                        opt in.
-                    </p>
-                    <small>
-                        <ul class=citations>
-                            <li>calccrypto's uint256_t <a href="https://github.com/calccrypto/uint256_t">github.com/calccrypto/uint256_t</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div id=raylibsimd-project>
-                    <div class=job-role style="border-color: #8DBCA2">
-                        <p>2020: RaylibSIMD SIMD Software rendering in C <a href="https://git.doylet.dev/doylet/RaylibSIMD">git.doylet.dev/doylet/RaylibSIMD</a></p>
-                    </div>
-                    <sub><i>C99, SSE2, Graphics Programming</i></sub>
-                    <p>
-                        Raylib is a game-engine by Raysan5 whose main focus is
-                        to make game engine programming simple and enjoyable.
-                        In this project, I rewrote the software-rendering
-                        routine to use SSE2/3 instructions to attain the
-                        expected 4x speed-up by taking advantage of
-                        data-parallelism offered by SIMD.
-                    </p>
-                    <small>
-                        <ul class=citations>
-                            <li>Raylib Website <a href="https://raylib.com/">raylib.com</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div id=dtrenderer-project>
-                    <div class=job-role style="border-color: #519A8B">
-                        <p>2017: DTRenderer 3D Software rendering in C++ <a href="https://git.doylet.dev/doylet/DTRenderer">git.doylet.dev/doylet/DTRenderer</a></p>
-                    </div>
-                    <a href="assets/projects_dtrenderer.gif"><img src="assets/projects_dtrenderer.gif"></a>
-                    <p>
-                        DTRenderer is an attempt to build a simple software
-                        renderer from the ground up. The main goal is to build
-                        an intuitive understanding of graphics mathematics,
-                        rendering pipeline and core concepts. It runs as a Win32
-                        program with minimal dependencies.
-                    </p>
-                    <ul class=milestones>
-                        <li>2D Software Rendering</li>
-                        <li>Alpha Blending</li>
-                        <li>Bilinear Filtering</li>
-                        <li>Correct Color Space Pipeline (SRGB <-> Linear)</li>
-                        <li>Rasterisation</li>
-                        <li>Texture Mapping</li>
-                        <li>Translation, Rotation, Scale</li>
-                        <li>3D Software Rendering</li>
-                        <li>Full Bright, Flat, Gouraud Shading</li>
-                        <li>Orthogaphic, Perspective Projections</li>
-                        <li>Translation Rotation Scale</li>
-                        <li>Custom Wavefront Obj Loader (minimal subset)</li>
-                        <li>Hot Reloadable DLL for Renderer Code (taken from Handmade Hero)</li>
-                    </ul>
-                </div>
-                <div id=mathmasher-project>
-                    <div class=job-role style="border-color: #DBAE55">
-                        <p>2017: Math Masher Math game for mobile <a href="luneaustralia/">doylet.dev/luneaustralia</a></p>
-                    </div>
-                    <div class=row>
-                        <a href="assets/projects_math_masher_screen_1.png"><img src="assets/projects_math_masher_screen_1.jpg"></a>
-                        <a href="assets/projects_math_masher_screen_2.png"><img src="assets/projects_math_masher_screen_2.jpg"></a>
-                        <a href="assets/projects_math_masher_screen_3.png"><img src="assets/projects_math_masher_screen_3.jpg"></a>
-                    </div>
-                    <p>
-                        Math Masher is a cross-platform mobile app that aims to
-                        teach basic arithmetic skills including addition,
-                        subtraction and multiplication by gamifying the learning
-                        experience. The app was developed in a team using the
-                        Cocos2DX framework in C++.
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>doylet <em class=title-note>// doy-lee</em></h1>
+      <p>Low-level programming enthusiast. Practicing C/C++ daily. Passion for tools and the game development domain. Always curious and learning.</p>
+    </div>
+  </header>
 
-                        My role in the project is as the lead developer and
-                        assisting role with asset design.
-                    </p>
-                    <ul class=milestones>
-                        <li>Project management (Trello, minutes meeting, code review etc.)</li>
-                        <li>Game engine architecture (Gameplay, UI, shopping mechanics, debug)</li>
-                        <li>Basic sound editing (Compressor, EQuing, normalisation)</li>
-                        <li>Asset designs (Creating graphical assets with Photoshop)</li>
-                    </ul>
-                    <small>
-                        <ul class=citations>
-                            <li>Trailer <a href="https://youtube.com/watch?v=AUozUZ8aY7g">youtube.com/watch?v=AUozUZ8aY7g</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div id=dchip8-project>
-                    <div class=job-role style="border-color: #C16358">
-                        <p>2017: DCHIP8 Chip8 interpreter <a href="https://git.doylet.dev/doylet/dchip-8">git.doylet.dev/doylet/dchip-8</a></p>
-                    </div>
-                    <div class="row">
-                        <a href="assets/projects_dchip8_screen_1.png"><img src="assets/projects_dchip8_screen_1.png"></a>
-                        <a href="assets/projects_dchip8_screen_2.png"><img src="assets/projects_dchip8_screen_2.png"></a>
-                    </div>
-                    <p>
-                        DCHIP8 aims to emulate the CHIP8 architecture to better
-                        understand at a lower level operations between memory,
-                        cpu, input and output.
-                    </p>
-                    <ul class=milestones>
-                        <li>Fetch, Decode, Execute Opcodes</li>
-                        <li>Modelling memory, registers and basic CPU architecture</li>
-                        <li>Software Rendering and interaction with Win32</li>
-                        <li>Minimal dependencies, single file executable</li>
-                    </ul>
-                    <small>
-                        <ul class=citations>
-                            <li>Specification Sheet <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">devernay.free.fr/hacks/chip8/C8TECH10.HTM</a></li>
-                        </ul>
-                    </small>
-                </div>
-                <div id=dengine-project>
-                    <div class=job-role style="border-color: #C16358">
-                        <p>2016: Dengine 2D engine for asteroids <a href="https://git.doylet.dev/doylet/dengine">git.doylet.dev/doylet/dengine</a></p>
-                    </div>
-                    <div class="row">
-                        <a href="assets/projects_dengine_screen_1.png"><img src="assets/projects_dengine_screen_1.png"></a>
-                        <a href="assets/projects_dengine_demo.gif"><img src="assets/projects_dengine_demo.gif"></a>
-                    </div>
-                    <p>
-                        Dengine is a solo project, 2D game engine developed with
-                        OpenGL and low-level libraries in C. The main goal of
-                        Dengine is to facilitate learning from many aspects of
-                        Computer Science. Alongside Dengine, Asteroids is being
-                        built which guides the development of features for the
-                        game. Dengine is inspired by Handmade Hero, with a focus
-                        on developing as many features with minimal libraries,
-                        such that it is not too time-consuming and
-                        counter-productive to do so.
-                    </p>
-                    <ul class=milestones>
-                        <li>Asset Management (load data into intermediate representations)</li>
-                        <li>Audio API from OpenAL</li>
-                        <li>Basic 2D Game Mathematics/Physics (Vector, Trig, Explicit Euler)</li>
-                        <li>Collision Detection (Single Axis Theorem, Minkowski Sum/Diff, AABB)</li>
-                        <li>Debug Services & Displays</li>
-                        <li>Entity Component Systems</li>
-                        <li>IMGUI Systems</li>
-                        <li>Input Parsing</li>
-                        <li>Push-Buffer Memory Systems</li>
-                        <li>Small Size Array Optimisations</li>
-                        <li>Standard Library Replacements (e.g. atoi, strlen, itoa, string)</li>
-                        <li>Texture Atlas Support, Runtime Font Packing</li>
-                        <li>OpenGL 2D Rendering Pipeline & Batching Render Calls</li>
-                    </ul>
-                    <small>
-                        <ul class=citations>
-                            <li>Handmade Hero <a href="https://handmadehero.org/">handmadehero.org</a></li>
-                        </ul>
-                    </small>
-                </div>
-            </section>
-        </main>
-    </body>
+  <main>
+    <div><hr></div>
+    <section aria-label="Links">
+      <h2>Links</h2>
+      <table>
+        <tr>
+        <td>Email</td>
+        <td><a href="cv.doylet.2380i@simplelogin.com">cv.doylet.2380i@simplelogin.com</a></td>
+        </tr>
+
+        <tr>
+        <td>Gitea (Personal Projects)</td>
+        <td><a href="git.doylet.dev">https://git.doylet.dev</a></td>
+        </tr>
+
+        <tr>
+        <td>Github (Open Source Work)</td>
+        <td><a href="https://github.com/doy-lee">https://github.com/doy-lee</a></td>
+        </tr>
+      </table>
+    </section>
+
+    <div><hr></div>
+    <section aria-label="About">
+      <h2>About</h2>
+      <p>
+        G'day, I'm a software developer who enjoys low-level programming. I have an interest
+        in building bespoke software using my own libraries, developing a "tech garden" so to speak.
+        That is a bunch of foundational libraries[<a href="#about-dn-library">1</a>] where I've
+        written and/or understood every line of code in them. Any bug is a bug in <i>my</i> source
+        code that I can go understand and fix.
+      </p>
+
+      <p>
+        Doing this is a nice forcing function that in turn provides an opportunity to learn about
+        different domains especially those involved in game development. Game development involves
+        the marrying of many programming disciplines with a reasonably high bar of quality that is
+        expected by end users and making games is fun and interesting!
+      </p>
+
+      <p>
+        I'm constantly learning and re-writing/improving[<a href="#about-reinventing-the-wheel">2</a>]
+        my foundational libraries as a form of training and
+        practice[<a href="#about-practice">3</a>]. In my experience each re-write has solidified my
+        understanding and improved the API design in that domain without fail.
+      </p>
+
+      <p>
+        I learn and take inspiration from the design philosophies of:
+        <ul class=bullet-points>
+          <li><strong><a href="https://handmade.network/manifesto">Handmade</a></strong> communities and friends (C. Muratori, R. Fleury, Wookash) for their initiatives to teach and cultivate high quality software.</li>
+          <li><strong><a href="https://tinygrad.org">TinyGrad</a></strong> for democratising ML through the relentless pursuit of simplification.</li>
+          <li><strong><a href="https://radgametools.com">Epic Game Tools (formerly RAD Game Tools)</a></strong> for consistently shipping high quality tooling trusted by the industry.</li>
+        </ul>
+      </p>
+
+      <small>
+        <ul class=citations>
+          <li id="about-dn-library">[1] Foundation Libraries <a href="https://git.doylet.dev/doylet/dn">git.doylet.dev/doylet/dn</a></li>
+          <li id="about-reinventing-the-wheel">[2] Reinventing the Wheel <a href="https://youtu.be/4B00hV3wmMY?t=292">Solving the Right Problems for Engine Programmers - Mike Acton‌ @ 4:52</a></li>
+          <li id="about-practice">[3] Practice <a href="https://youtu.be/4B00hV3wmMY?t=788">Solving the Right Problems for Engine Programmers - Mike Acton‌ @ 13:08</a></li>
+        </ul>
+      </small>
+    </section>
+
+    <div><hr></div>
+    <section aria-label="Work">
+      <h2>Work</h2>
+
+      <div>
+        <h3>Session (Private Messaging/Blockchain) [2024-2026]<img class=favicon src="assets/session-favicon.ico"></h3>
+        <ul class=job-tech>
+          <li>C++20</li>
+          <li>Python (Flask/UWSGI)</li>
+          <li>CMake</li>
+          <li>Solidity (Smart Contracts)</li>
+          <li>Cryptonote</li>
+        </ul>
+        <ul>
+          <li class=job-role style="border-color: #519A8B">2024 - 2026: C++ Senior Software Engineer</li>
+        </ul>
+        <p>
+          Session is a decentralised private messaging application that onion routes its messages
+          using the Session Node network. The Session Node network is powered by the Oxen blockchain
+          which allows operators to trustlessly join the network to store and route messages on
+          behalf of Session. Operator tokens are escrowed by smart contracts and are rewarded for
+          routing messages successfully.
+        </p>
+        <p>
+          I rejoined Session (formerly Oxen) in the blockchain team of 3 engineers, to assist the
+          network migrate its nodes from the Oxen blockchain to a layer 2 blockchain, Arbitrum. This
+          involves porting the trustless functionality from Oxen's C++ implementation into Solidity.
+          That is deployed on Arbitrum as well as designing and implementing the next stage, privacy
+          preserving subscriptions that grant access to premium messaging features.
+        </p>
+        <p>
+          The migration had to occur on a live network in a way that minimises disruption of
+          the quality-of-service of users using Session. We migrated successfully in 2025
+          atomically switching over 1000+ nodes to change their source-of-truth from Oxen to
+          Arbitrum and simultaneously migrated escrowed liquidity to Arbitrum.
+        </p>
+        <ul class=bullet-points>
+          <li>Built smart contracts[<a href="#session-smart-contracts">1</a>] to allow operators to escrow a stake to join a decentralised network, receive rewards.</li>
+          <li>Designed a certificate/token[<a href="#session-payment-architecture">2</a>] based system to endow Session accounts with Pro features in a privacy preserving manner.</li>
+          <li>Wired up payment hooks from Apple and Google into the certificate based system for Pro membership.</li>
+          <li>Worked on a plugin system[<a href="#session-plugins">3</a>] for extensions such as bots and moderation in public group-chats.</li>
+        </ul>
+        <small>
+          <ul class=citations>
+            <li>Session Messenger <a href="https://getsession.org/">https://getsession.org/</a></li>
+            <li id="session-smart-contracts">[1] Smart Contracts <a href="https://github.com/Doy-lee/session-token-contracts/tree/doyle-manual-contract-interaction">github.com/Doy-lee/session-token-contracts/tree/doyle-manual-contract-interaction</a></li>
+            <li id="session-payment-architecture">[2] Payment Architecture <a href="https://github.com/session-foundation/session-pro-backend/tree/6bfea783644e4f2a77096fb2535465a7af86c5d0#architecture">github.com/session-foundation/session-pro-backend/tree/6bfea783644e4f2a77096fb2535465a7af86c5d0#architecture</a></li>
+            <li id="session-plugins">[3] Session Plugins <a href="https://github.com/Doy-lee/session-pysogs/blob/doyle-plugin-installers/plugins.md">github.com/Doy-lee/session-pysogs/blob/doyle-plugin-installers/plugins.md</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <h3>Agent Orientated Software (AI/Robotics) [2020-2024]<img class=favicon src="assets/aos-favicon.ico"></h3>
+        <ul class=job-tech>
+          <li>C++17</li>
+          <li>CMake</li>
+          <li>Docker</li>
+          <li>DDS+Kafka (Data Distribution)</li>
+          <li>2D Discrete Event Simulator (ImGui, GLFW)</li>
+        </ul>
+        <ul>
+          <li class=job-role style="border-color: #C16358">2022 - 2024: C++ Senior Software Engineer</li>
+          <li class=job-role style="border-color: #BEBF5E">2020 - 2022: C++ Software Engineer</li>
+        </ul>
+        <p>
+          AOS aims to build trustable and explainable AI using <i>multi-agent systems</i> with the
+          cognitive framework, <i>Beliefs, Desires and Intentions</i> (BDI). My role involves
+          improving the AI toolchain such as improving cross-agent collaboration, forward planning,
+          scheduling and de-conflicting of agent intentionality, its execution and distributed agent
+          communication to improve resilience in adversarial situations.
+        </p>
+        <ul class=bullet-points>
+          <li>Coordinated multiple toolchain upgrades of our in-house AI frameworks, end-to-end.</li>
+          <li>Added virtual-memory backed allocators for cache locality, reduced sys-calls and memory profiling.</li>
+          <li>Co-implemented protocol to distribute agents onto different routing technologies (DDS & Kafka).</li>
+          <li>Owned the docs website with APIs & manuals, end-to-end for production releases.</li>
+          <li>Implemented multiple discrete event simulators for verification of agent behaviours.</li>
+          <li>Documented best practices, patterns and tutorials for designing effective multi-agent systems.</li>
+          <li>Implemented real-world system specs in a multi-agent architecture to highlight deficiencies in the development methodology leading to new protocols, e.g. researching interfaces for humans to effectively contribute into the agent decision making.</li>
+        </ul>
+        <small>
+          <ul class=citations>
+            <li>Agent Orientated Software <a href="https://aosgrp.com">aosgrp.com</a></li>
+            <li>Github <a href="https://github.com/jackagents/jack">github.com/jackagents/jack</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <h3>Oxen (Privacy Software/Blockchain) [2018 - 2022]<img class=favicon src="assets/oxen-favicon-32x32.png"></h3>
+        <ul class=job-tech>
+          <li>C++14</li>
+          <li>Boost</li>
+          <li>CMake</li>
+          <li>Docker</li>
+          <li>Qt5</li>
+          <li>Cross Platform Builds</li>
+          <li>Open Source</li>
+          <li>Applied Cryptography (Cryptonote/Libsodium)</li>
+        </ul>
+        <ul>
+          <li class=job-role style="border-color: #8DBCA2">2018 - 2020: C++ Software Engineer</li>
+        </ul>
+        <p>
+          Oxen is a not-for-profit, open-source company developing privacy protocols and tools. I
+          implemented[<a href="#oxen-git-commits">1</a>] a decentralized layer of servers known as
+          the Service Node[<a href="#oxen-service-nodes">2</a>] network that distributes the
+          blockchain and maintains layer access-control. They coordinate peer-to-peer to evict
+          underperforming and malicious peers whilst generating entropy for securing blocks using
+          checkpointing[<a href="#oxen-checkpointing">3</a>] and a commit-reveal scheme known as
+          Pulse[<a href="#oxen-pulse#">4</a>].
+        </p>
+        <p>
+          With over 1k+ servers and growing, the Service Node network provides a sybil-resistant
+          foundation to facilitate a privacy preserving onion routing network, Lokinet, and, a
+          privacy preserving messenger, Session.
+        </p>
+        <ul class=bullet-points>
+          <li>Rapidly learned & up-skilled as their first developer in the startup to form a development methodology and hiring practices.</li>
+          <li>Implemented a resilient server layer over new P2P gossip protocols: node de/registration & rewards, service metrics & voting.</li>
+          <li>Formed immutable checkpoints to secure blocks using shared consensus to provide faster finalization of transfers on the network.</li>
+          <li>Created an on-chain DNS registry to map cryptographic keys to human readable aliases (e.g. Lokinet domains, Oxen wallets and Session aliases).</li>
+          <li>Transitioned from Proof of Work to Proof of Stake live in production, deprecated miners for a commit-reveal scheme to generate entropy for minting blocks.</li>
+          <li>Owned the release process (build/package/distribute) end to end.</li>
+          <li>Patched 0-days and exploits & recovering from consensus failure on a live production network.</li>
+          <li>Improved the test framework for including re-write of Monero's framework and adding integration tests using IPC over named pipes.</li>
+        </ul>
+        <small>
+          <ul class=citations>
+            <li>Oxen Website <a href="https://oxen.io">oxen.io</a></li>
+            <li id="oxen-git-commits">[1] Git Commits <a href="https://github.com/oxen-io/oxen-core/pulls?q=is%3Apr+author%3Adoy-lee+is%3Aclosed+">github.com/oxen-io/oxen-core/pulls?q=is%3Apr+author%3Adoy-lee+is%3Aclosed</a></li>
+            <li id="oxen-service-nodes">[2] Service Nodes <a href="https://oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes">oxen.gitbook.io/oxen-docs/about-the-oxen-blockchain/oxen-service-nodes</a></li>
+            <li id="oxen-checkpointing">[3] Checkpointing <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-3.md</a></li>
+            <li id="oxen-pulse">[4] Pulse <a href="https://github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md">github.com/oxen-io/oxen-improvement-proposals/blob/master/LIPS/LIP-5.md</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <h3>Older Work</h3>
+        <p class=job-role style="border-color: #519A8B">2017: C++ Intern Tools Engineer, Wargaming Sydney</p>
+        <p>
+          Game development company most popular for developing World of Tanks. I was in the tools
+          team assisting with the development of the editor for the asset pipeline.
+        </p>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #DBAE55">2014 - 2017: B. Computer Science, University of New South Wales<img class=favicon src="assets/unsw-icon-192x192.png"></p>
+        <small>
+          <ul class=citations>
+            <li>UNSW <a href="https://unsw.edu.au">unsw.edu.au</a></li>
+            <li>Wargaming Sydney <a href="https://wargaming.com/">wargaming.com</a></li>
+          </ul>
+        </small>
+      </div>
+    </section>
+
+    <div><hr></div>
+    <section aria-label="Projects">
+      <h2>Projects</h2>
+
+      <div>
+        <p class=job-role style="border-color: #C16358">2018 - CURR: DN Library <a href="https://git.doylet.dev/doylet/dn">git.doylet.dev/doylet/dn</a></p>
+        <ul class=job-tech>
+          <li>C style C++</li>
+          <li>Single File Library</li>
+          <li>Arenas</li>
+          <li>Pools</li>
+          <li>Hash-Tables</li>
+          <li>Arrays</li>
+          <li>Strings</li>
+          <li>OS Primitives (Threads/Mutexes/Barriers...)</li>
+          <li>Networking (cURL/Emscripten)</li>
+          <li>Profiler</li>
+          <li>Cross-Platform (Win32/POSIX/Emscripten)</li>
+        </ul>
+        <p>
+          My personal foundational libraries for tools in C-style C++ that replaces the C/C++
+          standard libraries for my projects. It provides a set of primitives designed around
+          explicit memory control with allocator-aware APIs, zero-allocation patterns, and
+          arena-based memory management where appropriate.
+        </p>
+        <p>
+          The library is designed for trivial integration: a single dn.h/dn.cpp pair (or an
+          auto-generated single-header amalgamation) with no external dependencies required. It
+          targets Win32, POSIX, and Emscripten/WASM, with compile-time feature toggles to include
+          only what's needed.
+        </p>
+        <p>
+          Core modules include arrays, hash tables, string manipulation with optional
+          AVX-512 acceleration, a frame profiler, thread-local arena contexts with scratch memory,
+          and a networking layer abstracting cURL and browser Fetch APIs. Debug tooling is built in:
+          ASAN memory poisoning, use-after-free detection for scratch arenas, memory scrubbing on
+          deallocation, and leak tracking.
+        </p>
+        <p>
+          It has continually evolved since the start of my programming career and has been a testing
+          ground for understanding the implication of different API designs, how common
+          functionality is built and exploring different primitives (like the experimental AVX-512
+          string APIs).
+        </p>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #DBAE55">2025 - CURR: Solid++</p>
+        <ul class=job-tech>
+          <li>Python</li>
+          <li>C++ (GUI)</li>
+          <li>Chainflip</li>
+          <li>Hyperliquid</li>
+          <li>Market Making</li>
+          <li>ImGui</li>
+          <li>SQLite</li>
+          <li>WebSocket</li>
+          <li>Emscripten/WASM</li>
+        </ul>
+        <table>
+          <tr><td><img src="assets/projects_solidpp.jpg"></td></tr>
+        </table>
+        <p>
+          A complete rewrite of Liquid++ bot in Python with a native C++ ImGui dashboard which also
+          targets the web using Emscripten for remote monitoring. This was an experiment into the
+          viability of using Python for faster iteration on protocol updates on Chainflip as well as
+          testing newer strategies more easily. It was also an experiment in using ImGui for web
+          UIs.
+        </p>
+        <p>
+          The rewrite was a trade-off sacrificing latency for faster iteration. Chainflip has a
+          6-second block time which makes sub-second latency less critical than
+          the ability to iterate quickly. The bot runs two strategies: a delta-neutral hedge
+          across Chainflip and Hyperliquid (perps and spot), and a basic Bybit spot strategy. Bot
+          pricing is configurable using averages over a lookback window with tools to identify
+          competing orders and to offer to beat or match them in real-time.
+        </p>
+        <p>
+          The C++ GUI compiles to both a native desktop app and a WASM web build allowing for quick
+          local iteration whilst allowing remote monitoring. It communicates with the Python backend
+          over WebSocket using a custom binary protocol. Features include a self-tuning swap window,
+          trading performance tracking and sends notifications via Session messenger webhooks.
+        </p>
+      </div>
+
+
+      <div>
+        <p class=job-role style="border-color: #DBAE55">2024 - 2025: Liquid++</p>
+        <ul class=job-tech>
+          <li>C style C++</li>
+          <li>Chainflip</li>
+          <li>Market Making</li>
+          <li>ImGui</li>
+          <li>Sokol</li>
+          <li>SQLite</li>
+          <li>Backend</li>
+        </ul>
+        <table>
+          <tr><td><img src="assets/projects_liquidpp.png"></td></tr>
+        </table>
+        <p>
+          A market-making bot written in C++ for Chainflip, a decentralised cross-chain exchange.
+          The bot provides liquidity by placing limit orders on Chainflip's concentrated liquidity
+          AMM, then hedges directional exposure by taking opposing perpetual positions on
+          Hyperliquid. It pulls price data from Bybit as a secondary oracle to inform pricing.
+        </p>
+        <p>
+          The system connects to three exchanges simultaneously via WebSocket, each with dedicated
+          rate limiters and staleness detection to prevent trading on stale data. Orders are priced
+          using the external mid-price plus a configurable profit margin, and a kill-order is
+          scheduled for the next block to cancel unfilled orders before they can be picked up at an
+          unfavourable price.
+        </p>
+        <p>
+          It has hot-reload DLL support, a platform layer (Sokol) separates business logic into a
+          reloadable DLL. Dear ImGui is used for monitoring positions, order fills, and exchange
+          connectivity. A separate web dashboard server (CivetWeb) publishes binary heartbeats over
+          WebSocket for remote monitoring in a browser.
+        </p>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #519A8B">2023: Terry Cherry</p>
+        <ul class=job-tech>
+          <li>C style C++</li>
+          <li>Raylib</li>
+          <li>Emscripten</li>
+          <li>2D Tower Defence-Esque</li>
+        </ul>
+        <table>
+          <tr><td><img src="assets/projects_terry_cherry_1.jpg"></td>
+          <td><img src="assets/projects_terry_cherry_0.jpg"></td></tr>
+        </table>
+        <p>
+          A 2-player local co-op top-down tower defence game developed over 4 weekends in a game
+          jam. Players defend "Terry's Heart" from waves of love-themed enemies (catfish, smoochie
+          teleporters, and clinger dashers) that march along waypoint paths toward the base.
+        </p>
+        <p>
+          Players earn coins by defeating enemies and purchase upgrades or buildings from the
+          storefronts. A pub that slows enemies, a church that converts them to allies and an
+          airport that flies them to the back of the queue. Monkey totems spawn periodically which
+          can disable enemy portals when delivered to them shutting them down permanently to win.
+        </p>
+        <p>
+          The engine features a tree-based entity system with generation-indexed
+          handles[<a href="projects-terry-cherry-handles">1</a>] to prevent use-after-free bugs,
+          fixed-timestep physics with swept AABB collision and a waypoint path-finding system. Built
+          on Raylib with a custom C++ meta-build system, hot-reload DLL support, and an Emscripten
+          web build targeting WebGL.
+        </p>
+        <small>
+          <ul class=citations>
+            <li>Play Terry Cherry <a href="https://game.doylet.dev/terry_cherry/">game.doylet.dev/terry_cherry/</a></li>
+            <li>Source Code <a href="https://git.doylet.dev/doylet/feely_pona">git.doylet.dev/doylet/feely_pona</a></li>
+            <li>[1] Handles are the better pointers<a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">floooh.github.io/2018/06/17/handles-vs-pointers.html</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #BEBF5E">2020: intc Software u128/256 bit port to C <a href="https://git.doylet.dev/doylet/intc">git.doylet.dev/doylet/intc</a></p>
+        <ul class=job-tech>
+          <li>C99/C++</li>
+          <li>Open Source</li>
+          <li>Single File Library Port</li>
+        </ul>
+        <p>
+          intc is a port of calccrypto's uint128/256 library into a single header file library to
+          allow u128/256 calculations. This port is primarily C first and provides C++ helpers like
+          operator overloads that are opt in.
+        </p>
+        <small>
+          <ul class=citations>
+            <li>calccrypto's uint256_t <a href="https://github.com/calccrypto/uint256_t">github.com/calccrypto/uint256_t</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #8DBCA2">2020: RaylibSIMD SIMD Software rendering in C <a href="https://git.doylet.dev/doylet/RaylibSIMD">git.doylet.dev/doylet/RaylibSIMD</a></p>
+        <ul class=job-tech>
+          <li>C99</li>
+          <li>SSE2</li>
+          <li>Graphics Programming</li>
+        </ul>
+        <p>
+          Raylib is a game-engine by Raysan5 whose main focus is to make game engine programming
+          simple and enjoyable. In this project, I rewrote the software-rendering routine to use
+          SSE2/3 instructions to attain the expected 4x speed-up by taking advantage of
+          data-parallelism offered by SIMD.
+        </p>
+        <small>
+          <ul class=citations>
+            <li>Raylib Website <a href="https://raylib.com/">raylib.com</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #519A8B">2017: DTRenderer 3D Software rendering in C++ <a href="https://git.doylet.dev/doylet/DTRenderer">git.doylet.dev/doylet/DTRenderer</a></p>
+        <table>
+          <tr><td><img src="assets/projects_dtrenderer.gif"></td></tr>
+        </table>
+        <p>
+          DTRenderer is an attempt to build a simple software renderer from the ground up. The main
+          goal is to build an intuitive understanding of graphics mathematics, rendering pipeline
+          and core concepts. It runs as a Win32 program with minimal dependencies.
+        </p>
+        <ul class=bullet-points>
+          <li>2D Software Rendering</li>
+          <li>Alpha Blending</li>
+          <li>Bilinear Filtering</li>
+          <li>Correct Color Space Pipeline (SRGB <-> Linear)</li>
+          <li>Rasterisation</li>
+          <li>Texture Mapping</li>
+          <li>Translation, Rotation, Scale</li>
+          <li>3D Software Rendering</li>
+          <li>Full Bright, Flat, Gouraud Shading</li>
+          <li>Orthographic, Perspective Projections</li>
+          <li>Custom Wavefront Obj Loader (minimal subset)</li>
+          <li>Hot Reloadable DLL for Renderer Code (taken from Handmade Hero)</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #DBAE55">2017: Math Masher Math game for mobile <a href="luneaustralia/">doylet.dev/luneaustralia</a></p>
+        <table>
+          <tr>
+            <td><img src="assets/projects_math_masher_screen_1.jpg"></td>
+            <td><img src="assets/projects_math_masher_screen_2.jpg"></td>
+            <td><img src="assets/projects_math_masher_screen_3.jpg"></td>
+          </tr>
+        </table>
+        <p>
+          Math Masher is a cross-platform mobile app that aims to teach basic arithmetic skills
+          including addition, subtraction and multiplication by gamifying the learning experience.
+          The app was developed in a team using the Cocos2DX framework in C++. My role in the
+          project is as the lead developer and assisting role with asset design.
+        </p>
+        <ul class=bullet-points>
+          <li>Project management (Trello, minutes meeting, code review etc.)</li>
+          <li>Game engine architecture (Gameplay, UI, shopping mechanics, debug)</li>
+          <li>Basic sound editing (Compressor, EQing, normalisation)</li>
+          <li>Asset designs (Creating graphical assets with Photoshop)</li>
+        </ul>
+        <small>
+          <ul class=citations>
+            <li>Trailer <a href="https://youtube.com/watch?v=AUozUZ8aY7g">youtube.com/watch?v=AUozUZ8aY7g</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #C16358">2017: DCHIP8 Chip8 interpreter <a href="https://git.doylet.dev/doylet/dchip-8">git.doylet.dev/doylet/dchip-8</a></p>
+        <table>
+          <tr>
+            <td><img src="assets/projects_dchip8_screen_1.png"></td>
+            <td><img src="assets/projects_dchip8_screen_2.png"></td>
+          </tr>
+        </table>
+        <p> DCHIP8 aims to emulate the CHIP8 architecture to better understand at a lower level
+            operations between memory, cpu, input and output.</p>
+        <ul class=bullet-points>
+          <li>Fetch, Decode, Execute Opcodes</li>
+          <li>Modelling memory, registers and basic CPU architecture</li>
+          <li>Software Rendering and interaction with Win32</li>
+          <li>Minimal dependencies, single file executable</li>
+        </ul>
+        <small>
+          <ul class=citations>
+            <li>Specification Sheet <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">devernay.free.fr/hacks/chip8/C8TECH10.HTM</a></li>
+          </ul>
+        </small>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #C16358">2016: Dengine 2D engine for asteroids <a href="https://git.doylet.dev/doylet/dengine">git.doylet.dev/doylet/dengine</a></p>
+        <table>
+          <tr>
+            <td><img src="assets/projects_dengine_screen_1.png"></td>
+            <td><img src="assets/projects_dengine_demo.gif"></td>
+          </tr>
+        </table>
+        <p>
+          Dengine is a solo project, 2D game engine developed with OpenGL and low-level libraries in
+          C. The main goal of Dengine is to facilitate learning from many aspects of Computer
+          Science. Alongside Dengine, Asteroids is being built which guides the development of
+          features for the game. Dengine is inspired by Handmade Hero, with a focus on developing as
+          many features with minimal libraries, such that it is not too time-consuming and
+          counter-productive to do so.
+        </p>
+        <ul class=bullet-points>
+          <li>Asset Management (load data into intermediate representations)</li>
+          <li>Audio API from OpenAL</li>
+          <li>Basic 2D Game Mathematics/Physics (Vector, Trig, Explicit Euler)</li>
+          <li>Collision Detection (Single Axis Theorem, Minkowski Sum/Diff, AABB)</li>
+          <li>Debug Services & Displays</li>
+          <li>Entity Component Systems</li>
+          <li>IMGUI Systems</li>
+          <li>Input Parsing</li>
+          <li>Push-Buffer Memory Systems</li>
+          <li>Small Size Array Optimisations</li>
+          <li>Standard Library Replacements (e.g. atoi, strlen, itoa, string)</li>
+          <li>Texture Atlas Support, Runtime Font Packing</li>
+          <li>OpenGL 2D Rendering Pipeline & Batching Render Calls</li>
+        </ul>
+        <small>
+          <ul class=citations>
+            <li>Handmade Hero <a href="https://handmadehero.org/">handmadehero.org</a></li>
+          </ul>
+        </small>
+      </div>
+
+    </section>
+
+  </main>
+</body>
 </html>
