@@ -35,7 +35,7 @@
       font-weight:      bold;
     }
 
-    .job-tech li {
+    .keywords-list li {
       border: 1px dashed;
       padding: 0.25em;
       margin-bottom: 0.5em;
@@ -69,7 +69,7 @@
   <header>
     <div>
       <h1>doylet <em class=title-note>// doy-lee</em></h1>
-      <p>Low-level programming enthusiast. Practicing C/C++ daily. Passion for tools and the game development domain. Always curious and learning.</p>
+      <p>Low-level programming enthusiast. Uses C/C++ often. Passion for tools, privacy & game technology. Curious and learning everyday.</p>
     </div>
   </header>
 
@@ -98,6 +98,17 @@
     <div><hr></div>
     <section aria-label="About">
       <h2>About</h2>
+
+      <h3>What I use</h3>
+      <ul class=keywords-list>
+        <li>Neovim</li>
+        <li>OpenCode</li>
+        <li>Win32 Primarily</li>
+        <li>C/C++ (often C-style C++)</li>
+        <li>Python for fun</li>
+      </ul>
+
+      <h3>Hey there!</h3>
       <p>
         G'day, I'm a software developer who enjoys low-level programming. I have an interest
         in building bespoke software using my own libraries, developing a "tech garden" so to speak.
@@ -108,7 +119,7 @@
 
       <p>
         Doing this is a nice forcing function that in turn provides an opportunity to learn about
-        different domains especially those involved in game development. Game development involves
+        different domains especially those involved in game technology. Game development involves
         the marrying of many programming disciplines with a reasonably high bar of quality that is
         expected by end users and making games is fun and interesting!
       </p>
@@ -129,6 +140,15 @@
         </ul>
       </p>
 
+      <h3>My 5 cents</h3>
+      <ul class=keywords-list>
+        <li>Passionate for: Privacy, data sovereignty, game tech</li>
+        <li>Likes Handmade: understanding under the hood, arenas, build.bat/sh, length-delimited strings</li>
+        <li>Knows CPUs: SIMD, caches, bandwidth, OoO & speculative execution</li>
+        <li>Designs APIs for users: zero-alloc, prioritise N > 1, explicit mem management, zero-is-initialisation (ZII), non-opinionated data-types</li>
+        <li>Prefers explicitness/safety: handles over pointers, polling over callbacks, stacks over recursion, vendoring over package managers</li>
+      </ul>
+
       <small>
         <ul class=citations>
           <li id="about-dn-library">[1] Foundation Libraries <a href="https://git.doylet.dev/doylet/dn">git.doylet.dev/doylet/dn</a></li>
@@ -144,7 +164,7 @@
 
       <div>
         <h3>Session (Private Messaging/Blockchain) [2024-2026]<img class=favicon src="assets/session-favicon.ico"></h3>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C++20</li>
           <li>Python (Flask/UWSGI)</li>
           <li>CMake</li>
@@ -192,7 +212,7 @@
 
       <div>
         <h3>Agent Orientated Software (AI/Robotics) [2020-2024]<img class=favicon src="assets/aos-favicon.ico"></h3>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C++17</li>
           <li>CMake</li>
           <li>Docker</li>
@@ -229,7 +249,7 @@
 
       <div>
         <h3>Oxen (Privacy Software/Blockchain) [2018 - 2022]<img class=favicon src="assets/oxen-favicon-32x32.png"></h3>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C++14</li>
           <li>Boost</li>
           <li>CMake</li>
@@ -303,7 +323,7 @@
 
       <div>
         <p class=job-role style="border-color: #C16358">2018 - CURR: DN Library <a href="https://git.doylet.dev/doylet/dn">git.doylet.dev/doylet/dn</a></p>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C style C++</li>
           <li>Single File Library</li>
           <li>Arenas</li>
@@ -323,10 +343,9 @@
           arena-based memory management where appropriate.
         </p>
         <p>
-          The library is designed for trivial integration: a single dn.h/dn.cpp pair (or an
-          auto-generated single-header amalgamation) with no external dependencies required. It
-          targets Win32, POSIX, and Emscripten/WASM, with compile-time feature toggles to include
-          only what's needed.
+          The library is designed for trivial integration: a single amalgamated header and
+          implementation file with no external dependencies required. It targets Win32, POSIX, and
+          Emscripten/WASM, with compile-time feature toggles to include only what's needed.
         </p>
         <p>
           Core modules include arrays, hash tables, string manipulation with optional
@@ -338,14 +357,45 @@
         <p>
           It has continually evolved since the start of my programming career and has been a testing
           ground for understanding the implication of different API designs, how common
-          functionality is built and exploring different primitives (like the experimental AVX-512
-          string APIs).
+          functionality is built and exploring different primitives (like learning about AVX-512
+          to use in string APIs).
+        </p>
+      </div>
+
+      <div>
+        <p class=job-role style="border-color: #C16358">2023 - CURR: TELY Engine</p>
+        <ul class=keywords-list>
+          <li>C style C++</li>
+          <li>Sokol</li>
+          <li>Dear ImGui</li>
+          <li>FreeType + HarfBuzz</li>
+          <li>2D Renderer</li>
+          <li>Asset Management</li>
+          <li>Cross-Platform (Win32/Emscripten)</li>
+        </ul>
+        <p>
+          An in-house engine and framework built on Sokol that provides a platform layer, 2D
+          batched renderer, asset management, font rendering with FreeType and HarfBuzz, streaming
+          audio, video playback, and input handling. It is the foundation for most of my GUI
+          projects.
+        </p>
+        <p>
+          It compiles as a native desktop app and can target the web. It includes a
+          deferred asset loading system, a sprite sheet packer with keyframe animation
+          support, renderer that outputs vertex batches, a basic GPU wrapper (samplers, render
+          passes, pipelines) and a networking layer backed by cURL on desktop and fetch APIs via the
+          browser.
+        </p>
+        <p>
+          It is a project whose goal is to be a forcing function for learning about game technology
+          as needed to build hobby projects. Its features are at various levels of maturity as
+          necessitated to get my hobby projects functional.
         </p>
       </div>
 
       <div>
         <p class=job-role style="border-color: #DBAE55">2025 - CURR: Solid++</p>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>Python</li>
           <li>C++ (GUI)</li>
           <li>Chainflip</li>
@@ -385,7 +435,7 @@
 
       <div>
         <p class=job-role style="border-color: #DBAE55">2024 - 2025: Liquid++</p>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C style C++</li>
           <li>Chainflip</li>
           <li>Market Making</li>
@@ -420,7 +470,7 @@
 
       <div>
         <p class=job-role style="border-color: #519A8B">2023: Terry Cherry</p>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C style C++</li>
           <li>Raylib</li>
           <li>Emscripten</li>
@@ -459,7 +509,7 @@
 
       <div>
         <p class=job-role style="border-color: #BEBF5E">2020: intc Software u128/256 bit port to C <a href="https://git.doylet.dev/doylet/intc">git.doylet.dev/doylet/intc</a></p>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C99/C++</li>
           <li>Open Source</li>
           <li>Single File Library Port</li>
@@ -478,7 +528,7 @@
 
       <div>
         <p class=job-role style="border-color: #8DBCA2">2020: RaylibSIMD SIMD Software rendering in C <a href="https://git.doylet.dev/doylet/RaylibSIMD">git.doylet.dev/doylet/RaylibSIMD</a></p>
-        <ul class=job-tech>
+        <ul class=keywords-list>
           <li>C99</li>
           <li>SSE2</li>
           <li>Graphics Programming</li>
