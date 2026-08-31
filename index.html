@@ -56,24 +56,30 @@
     .favicon       { height: 16px; vertical-align: text-bottom; padding-left: 0.5em; padding-right: 0.5em; }
     .bullet-points { list-style: circle; margin-left: 1.5rem; }
 
-    @media print {
-      .pagebreak {
-        page-break-before: always;
-      }
-    }
-
-
+    /*
+       Helper classes for printing to PDF. A class with `print-show` will only show up in in
+       printing mode. `print-hide` will hide the tagged class when in printing mode.
+     */
+    @media screen { .print-show { display: none; } }
+    @media print  { .print-hide { display: none; } }
   </style>
 </head>
 <body>
   <header>
     <div>
-      <h1>doylet <em class=title-note>// doy-lee</em></h1>
+     <h1>doylet <em class=title-note>// doy-lee</em></h1>
       <p>Low-level programmer since 2016. Uses C/C++ often. Passion for tools, privacy & game technology. Curious & learning every day.</p>
     </div>
   </header>
 
   <main>
+    <section class="print-show" aria-label="Redirect to website">
+     <div><hr></div>
+     <div style="font-size: 1.1em; text-align: center;">
+       Visit <em>https://doylet.dev</em> for comfortable viewing of this resume with videos and more projects. Thanks!
+     </div>
+    </section>
+
     <div><hr></div>
     <section aria-label="About">
       <h2>About</h2>
@@ -410,7 +416,7 @@
           <li>Cross-Platform (Win32/Emscripten)</li>
         </ul>
         <table>
-          <tr>
+          <tr class="print-hide">
             <td><img src="assets/projects_tely_0.jpg"></td>
           </tr>
           <tr>
@@ -480,236 +486,237 @@
         </p>
       </div>
 
-      <h3>Archived</h3>
-      <div>
-        <p class=job-role style="border-color: #E8976B">2024 - 2025: Liquid++ (Closed Source)</p>
-        <ul class=keywords-list>
-          <li>C style C++</li>
-          <li>Chainflip</li>
-          <li>Market Making</li>
-          <li>ImGui</li>
-          <li>Sokol</li>
-          <li>SQLite</li>
-          <li>Backend</li>
-        </ul>
-        <table>
-          <tr><td><img src="assets/projects_liquidpp.png"></td></tr>
-        </table>
-        <p>
-          A market-making bot written in C++ for Chainflip, a decentralised cross-chain exchange.
-          The bot provides liquidity by placing limit orders on Chainflip's concentrated liquidity
-          AMM, then hedges directional exposure by taking opposing perpetual positions on
-          Hyperliquid. It pulls price data from Bybit as a secondary oracle to inform pricing.
-        </p>
-        <p>
-          The system connects to three exchanges simultaneously via WebSocket, each with dedicated
-          rate limiters and staleness detection to prevent trading on stale data. Orders are priced
-          using the external mid-price plus a configurable profit margin, and a kill-order is
-          scheduled for the next block to cancel unfilled orders before they can be picked up at an
-          unfavourable price.
-        </p>
-        <p>
-          It has hot-reload DLL support, a platform layer (Sokol) separates business logic into a
-          reloadable DLL. Dear ImGui is used for monitoring positions, order fills, and exchange
-          connectivity. A separate web dashboard server (CivetWeb) publishes binary heartbeats over
-          WebSocket for remote monitoring in a browser.
-        </p>
-      </div>
-
-      <div>
-        <p class=job-role style="border-color: #E8749E">2023: Terry Cherry <a href="https://game.doylet.dev/terry_cherry/">game.doylet.dev/terry_cherry/</a></p>
-        <ul class=keywords-list>
-          <li>C style C++</li>
-          <li>Raylib</li>
-          <li>Emscripten</li>
-          <li>2D Tower Defence-Esque</li>
-        </ul>
-        <table>
-          <tr>
-            <td><img src="assets/projects_terry_cherry_1.jpg"></td>
-            <td><img src="assets/projects_terry_cherry_0.jpg"></td>
-          </tr>
-        </table>
-        <p>
-          A 2-player local co-op top-down tower defence game developed over 4 weekends in a game
-          jam. Players defend "Terry's Heart" from waves of love-themed enemies (catfish, smoochie
-          teleporters, and clinger dashers) that march along waypoint paths toward the base.
-        </p>
-        <p>
-          Players earn coins by defeating enemies and purchase upgrades or buildings from the
-          storefronts. A pub that slows enemies, a church that converts them to allies and an
-          airport that flies them to the back of the queue. Monkey totems spawn periodically which
-          can disable enemy portals when delivered to them shutting them down permanently to win.
-        </p>
-        <p>
-          The engine features a tree-based entity system with generation-indexed
-          handles[<a href="projects-terry-cherry-handles">1</a>] to prevent use-after-free bugs,
-          fixed-timestep physics with swept AABB collision and a waypoint path-finding system. Built
-          on Raylib with a custom C++ meta-build system, hot-reload DLL support, and an Emscripten
-          web build targeting WebGL.
-        </p>
-        <small>
-          <ul class=citations>
-            <li>Source Code <a href="https://git.doylet.dev/doylet/feely_pona">git.doylet.dev/doylet/feely_pona</a></li>
-            <li>[1] Handles are the better pointers <a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">floooh.github.io/2018/06/17/handles-vs-pointers.html</a></li>
+      <section aria-label="Archived">
+        <h3>Archived</h3>
+        <div>
+          <p class=job-role style="border-color: #E8976B">2024 - 2025: Liquid++ (Closed Source)</p>
+          <ul class=keywords-list>
+            <li>C style C++</li>
+            <li>Chainflip</li>
+            <li>Market Making</li>
+            <li>ImGui</li>
+            <li>Sokol</li>
+            <li>SQLite</li>
+            <li>Backend</li>
           </ul>
-        </small>
-      </div>
+          <table>
+            <tr><td><img src="assets/projects_liquidpp.png"></td></tr>
+          </table>
+          <p>
+            A market-making bot written in C++ for Chainflip, a decentralised cross-chain exchange.
+            The bot provides liquidity by placing limit orders on Chainflip's concentrated liquidity
+            AMM, then hedges directional exposure by taking opposing perpetual positions on
+            Hyperliquid. It pulls price data from Bybit as a secondary oracle to inform pricing.
+          </p>
+          <p>
+            The system connects to three exchanges simultaneously via WebSocket, each with dedicated
+            rate limiters and staleness detection to prevent trading on stale data. Orders are priced
+            using the external mid-price plus a configurable profit margin, and a kill-order is
+            scheduled for the next block to cancel unfilled orders before they can be picked up at an
+            unfavourable price.
+          </p>
+          <p>
+            It has hot-reload DLL support, a platform layer (Sokol) separates business logic into a
+            reloadable DLL. Dear ImGui is used for monitoring positions, order fills, and exchange
+            connectivity. A separate web dashboard server (CivetWeb) publishes binary heartbeats over
+            WebSocket for remote monitoring in a browser.
+          </p>
+        </div>
 
-      <div>
-        <p class=job-role style="border-color: #C4A35A">2020: intc Software u128/256 bit port to C <a href="https://git.doylet.dev/doylet/intc">git.doylet.dev/doylet/intc</a></p>
-        <ul class=keywords-list>
-          <li>C99/C++</li>
-          <li>Open Source</li>
-          <li>Single File Library Port</li>
-        </ul>
-        <p>
-          intc is a port of calccrypto's uint128/256 library into a single header file library to
-          allow u128/256 calculations. This port is primarily C first and provides C++ helpers like
-          operator overloads that are opt in.
-        </p>
-        <small>
-          <ul class=citations>
-            <li>calccrypto's uint256_t <a href="https://github.com/calccrypto/uint256_t">github.com/calccrypto/uint256_t</a></li>
+        <div>
+          <p class=job-role style="border-color: #E8749E">2023: Terry Cherry <a href="https://game.doylet.dev/terry_cherry/">game.doylet.dev/terry_cherry/</a></p>
+          <ul class=keywords-list>
+            <li>C style C++</li>
+            <li>Raylib</li>
+            <li>Emscripten</li>
+            <li>2D Tower Defence-Esque</li>
           </ul>
-        </small>
-      </div>
+          <table>
+            <tr>
+              <td><img src="assets/projects_terry_cherry_1.jpg"></td>
+              <td><img src="assets/projects_terry_cherry_0.jpg"></td>
+            </tr>
+          </table>
+          <p>
+            A 2-player local co-op top-down tower defence game developed over 4 weekends in a game
+            jam. Players defend "Terry's Heart" from waves of love-themed enemies (catfish, smoochie
+            teleporters, and clinger dashers) that march along waypoint paths toward the base.
+          </p>
+          <p>
+            Players earn coins by defeating enemies and purchase upgrades or buildings from the
+            storefronts. A pub that slows enemies, a church that converts them to allies and an
+            airport that flies them to the back of the queue. Monkey totems spawn periodically which
+            can disable enemy portals when delivered to them shutting them down permanently to win.
+          </p>
+          <p>
+            The engine features a tree-based entity system with generation-indexed
+            handles[<a href="projects-terry-cherry-handles">1</a>] to prevent use-after-free bugs,
+            fixed-timestep physics with swept AABB collision and a waypoint path-finding system. Built
+            on Raylib with a custom C++ meta-build system, hot-reload DLL support, and an Emscripten
+            web build targeting WebGL.
+          </p>
+          <small>
+            <ul class=citations>
+              <li>Source Code <a href="https://git.doylet.dev/doylet/feely_pona">git.doylet.dev/doylet/feely_pona</a></li>
+              <li>[1] Handles are the better pointers <a href="https://floooh.github.io/2018/06/17/handles-vs-pointers.html">floooh.github.io/2018/06/17/handles-vs-pointers.html</a></li>
+            </ul>
+          </small>
+        </div>
 
-      <div>
-        <p class=job-role style="border-color: #9B8EC4">2020: RaylibSIMD SIMD Software rendering in C <a href="https://git.doylet.dev/doylet/RaylibSIMD">git.doylet.dev/doylet/RaylibSIMD</a></p>
-        <ul class=keywords-list>
-          <li>C99</li>
-          <li>SSE2</li>
-          <li>Graphics Programming</li>
-        </ul>
-        <p>
-          Raylib is a game-engine by Raysan5 whose main focus is to make game engine programming
-          simple and enjoyable. In this project, I rewrote the software-rendering routine to use
-          SSE2/3 instructions to attain the expected 4x speed-up by taking advantage of
-          data-parallelism offered by SIMD.
-        </p>
-        <small>
-          <ul class=citations>
-            <li>Raylib Website <a href="https://raylib.com/">raylib.com</a></li>
+        <div>
+          <p class=job-role style="border-color: #C4A35A">2020: intc Software u128/256 bit port to C <a href="https://git.doylet.dev/doylet/intc">git.doylet.dev/doylet/intc</a></p>
+          <ul class=keywords-list>
+            <li>C99/C++</li>
+            <li>Open Source</li>
+            <li>Single File Library Port</li>
           </ul>
-        </small>
-      </div>
+          <p>
+            intc is a port of calccrypto's uint128/256 library into a single header file library to
+            allow u128/256 calculations. This port is primarily C first and provides C++ helpers like
+            operator overloads that are opt in.
+          </p>
+          <small>
+            <ul class=citations>
+              <li>calccrypto's uint256_t <a href="https://github.com/calccrypto/uint256_t">github.com/calccrypto/uint256_t</a></li>
+            </ul>
+          </small>
+        </div>
 
-      <div>
-        <p class=job-role style="border-color: #D4A574">2017: DTRenderer 3D Software rendering in C++ <a href="https://git.doylet.dev/doylet/DTRenderer">git.doylet.dev/doylet/DTRenderer</a></p>
-        <table>
-          <tr><td><img src="assets/projects_dtrenderer.gif"></td></tr>
-        </table>
-        <p>
-          DTRenderer is an attempt to build a simple software renderer from the ground up. The main
-          goal is to build an intuitive understanding of graphics mathematics, rendering pipeline
-          and core concepts. It runs as a Win32 program with minimal dependencies.
-        </p>
-        <ul class=bullet-points>
-          <li>2D Software Rendering</li>
-          <li>Alpha Blending</li>
-          <li>Bilinear Filtering</li>
-          <li>Correct Color Space Pipeline (SRGB <-> Linear)</li>
-          <li>Rasterisation</li>
-          <li>Texture Mapping</li>
-          <li>Translation, Rotation, Scale</li>
-          <li>3D Software Rendering</li>
-          <li>Full Bright, Flat, Gouraud Shading</li>
-          <li>Orthographic, Perspective Projections</li>
-          <li>Custom Wavefront Obj Loader (minimal subset)</li>
-          <li>Hot Reloadable DLL for Renderer Code (taken from Handmade Hero)</li>
-        </ul>
-      </div>
-
-      <div>
-        <p class=job-role style="border-color: #E9B84D">2017: Math Masher Math game for mobile <a href="luneaustralia/">doylet.dev/luneaustralia</a></p>
-        <table>
-          <tr>
-            <td><img src="assets/projects_math_masher_screen_1.jpg"></td>
-            <td><img src="assets/projects_math_masher_screen_2.jpg"></td>
-            <td><img src="assets/projects_math_masher_screen_3.jpg"></td>
-          </tr>
-        </table>
-        <p>
-          Math Masher is a cross-platform mobile app that aims to teach basic arithmetic skills
-          including addition, subtraction and multiplication by gamifying the learning experience.
-          The app was developed in a team using the Cocos2DX framework in C++. My role in the
-          project is as the lead developer and assisting role with asset design.
-        </p>
-        <ul class=bullet-points>
-          <li>Project management (Trello, minutes meeting, code review etc.)</li>
-          <li>Game engine architecture (Gameplay, UI, shopping mechanics, debug)</li>
-          <li>Basic sound editing (Compressor, EQing, normalisation)</li>
-          <li>Asset designs (Creating graphical assets with Photoshop)</li>
-        </ul>
-        <small>
-          <ul class=citations>
-            <li>Trailer <a href="https://youtube.com/watch?v=AUozUZ8aY7g">youtube.com/watch?v=AUozUZ8aY7g</a></li>
+        <div>
+          <p class=job-role style="border-color: #9B8EC4">2020: RaylibSIMD SIMD Software rendering in C <a href="https://git.doylet.dev/doylet/RaylibSIMD">git.doylet.dev/doylet/RaylibSIMD</a></p>
+          <ul class=keywords-list>
+            <li>C99</li>
+            <li>SSE2</li>
+            <li>Graphics Programming</li>
           </ul>
-        </small>
-      </div>
+          <p>
+            Raylib is a game-engine by Raysan5 whose main focus is to make game engine programming
+            simple and enjoyable. In this project, I rewrote the software-rendering routine to use
+            SSE2/3 instructions to attain the expected 4x speed-up by taking advantage of
+            data-parallelism offered by SIMD.
+          </p>
+          <small>
+            <ul class=citations>
+              <li>Raylib Website <a href="https://raylib.com/">raylib.com</a></li>
+            </ul>
+          </small>
+        </div>
 
-      <div>
-        <p class=job-role style="border-color: #7FB5B0">2017: DCHIP8 Chip8 interpreter <a href="https://git.doylet.dev/doylet/dchip-8">git.doylet.dev/doylet/dchip-8</a></p>
-        <table>
-          <tr>
-            <td><img src="assets/projects_dchip8_screen_1.png"></td>
-            <td><img src="assets/projects_dchip8_screen_2.png"></td>
-          </tr>
-        </table>
-        <p> DCHIP8 aims to emulate the CHIP8 architecture to better understand at a lower level
-            operations between memory, cpu, input and output.</p>
-        <ul class=bullet-points>
-          <li>Fetch, Decode, Execute Opcodes</li>
-          <li>Modelling memory, registers and basic CPU architecture</li>
-          <li>Software Rendering and interaction with Win32</li>
-          <li>Minimal dependencies, single file executable</li>
-        </ul>
-        <small>
-          <ul class=citations>
-            <li>Specification Sheet <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">devernay.free.fr/hacks/chip8/C8TECH10.HTM</a></li>
+        <div>
+          <p class=job-role style="border-color: #D4A574">2017: DTRenderer 3D Software rendering in C++ <a href="https://git.doylet.dev/doylet/DTRenderer">git.doylet.dev/doylet/DTRenderer</a></p>
+          <table>
+            <tr><td><img src="assets/projects_dtrenderer.gif"></td></tr>
+          </table>
+          <p>
+            DTRenderer is an attempt to build a simple software renderer from the ground up. The main
+            goal is to build an intuitive understanding of graphics mathematics, rendering pipeline
+            and core concepts. It runs as a Win32 program with minimal dependencies.
+          </p>
+          <ul class=bullet-points>
+            <li>2D Software Rendering</li>
+            <li>Alpha Blending</li>
+            <li>Bilinear Filtering</li>
+            <li>Correct Color Space Pipeline (SRGB <-> Linear)</li>
+            <li>Rasterisation</li>
+            <li>Texture Mapping</li>
+            <li>Translation, Rotation, Scale</li>
+            <li>3D Software Rendering</li>
+            <li>Full Bright, Flat, Gouraud Shading</li>
+            <li>Orthographic, Perspective Projections</li>
+            <li>Custom Wavefront Obj Loader (minimal subset)</li>
+            <li>Hot Reloadable DLL for Renderer Code (taken from Handmade Hero)</li>
           </ul>
-        </small>
-      </div>
+        </div>
 
-      <div>
-        <p class=job-role style="border-color: #C49A6C">2016: Dengine 2D engine for asteroids <a href="https://git.doylet.dev/doylet/dengine">git.doylet.dev/doylet/dengine</a></p>
-        <table>
-          <tr>
-            <td><img src="assets/projects_dengine_screen_1.png"></td>
-            <td><img src="assets/projects_dengine_demo.gif"></td>
-          </tr>
-        </table>
-        <p>
-          Dengine is a solo project, 2D game engine developed with OpenGL and low-level libraries in
-          C. The main goal of Dengine is to facilitate learning from many aspects of Computer
-          Science. Alongside Dengine, Asteroids is being built which guides the development of
-          features for the game. Dengine is inspired by Handmade Hero, with a focus on developing as
-          many features with minimal libraries, such that it is not too time-consuming and
-          counter-productive to do so.
-        </p>
-        <ul class=bullet-points>
-          <li>Asset Management (load data into intermediate representations)</li>
-          <li>Audio API from OpenAL</li>
-          <li>Basic 2D Game Mathematics/Physics (Vector, Trig, Explicit Euler)</li>
-          <li>Collision Detection (Single Axis Theorem, Minkowski Sum/Diff, AABB)</li>
-          <li>Debug Services & Displays</li>
-          <li>Entity Component Systems</li>
-          <li>IMGUI Systems</li>
-          <li>Input Parsing</li>
-          <li>Push-Buffer Memory Systems</li>
-          <li>Small Size Array Optimisations</li>
-          <li>Standard Library Replacements (e.g. atoi, strlen, itoa, string)</li>
-          <li>Texture Atlas Support, Runtime Font Packing</li>
-          <li>OpenGL 2D Rendering Pipeline & Batching Render Calls</li>
-        </ul>
-        <small>
-          <ul class=citations>
-            <li>Handmade Hero <a href="https://handmadehero.org/">handmadehero.org</a></li>
+        <div>
+          <p class=job-role style="border-color: #E9B84D">2017: Math Masher Math game for mobile <a href="luneaustralia/">doylet.dev/luneaustralia</a></p>
+          <table>
+            <tr>
+              <td><img src="assets/projects_math_masher_screen_1.jpg"></td>
+              <td><img src="assets/projects_math_masher_screen_2.jpg"></td>
+              <td><img src="assets/projects_math_masher_screen_3.jpg"></td>
+            </tr>
+          </table>
+          <p>
+            Math Masher is a cross-platform mobile app that aims to teach basic arithmetic skills
+            including addition, subtraction and multiplication by gamifying the learning experience.
+            The app was developed in a team using the Cocos2DX framework in C++. My role in the
+            project is as the lead developer and assisting role with asset design.
+          </p>
+          <ul class=bullet-points>
+            <li>Project management (Trello, minutes meeting, code review etc.)</li>
+            <li>Game engine architecture (Gameplay, UI, shopping mechanics, debug)</li>
+            <li>Basic sound editing (Compressor, EQing, normalisation)</li>
+            <li>Asset designs (Creating graphical assets with Photoshop)</li>
           </ul>
-        </small>
-      </div>
+          <small>
+            <ul class=citations>
+              <li>Trailer <a href="https://youtube.com/watch?v=AUozUZ8aY7g">youtube.com/watch?v=AUozUZ8aY7g</a></li>
+            </ul>
+          </small>
+        </div>
 
+        <div>
+          <p class=job-role style="border-color: #7FB5B0">2017: DCHIP8 Chip8 interpreter <a href="https://git.doylet.dev/doylet/dchip-8">git.doylet.dev/doylet/dchip-8</a></p>
+          <table>
+            <tr>
+              <td><img src="assets/projects_dchip8_screen_1.png"></td>
+              <td><img src="assets/projects_dchip8_screen_2.png"></td>
+            </tr>
+          </table>
+          <p> DCHIP8 aims to emulate the CHIP8 architecture to better understand at a lower level
+              operations between memory, cpu, input and output.</p>
+          <ul class=bullet-points>
+            <li>Fetch, Decode, Execute Opcodes</li>
+            <li>Modelling memory, registers and basic CPU architecture</li>
+            <li>Software Rendering and interaction with Win32</li>
+            <li>Minimal dependencies, single file executable</li>
+          </ul>
+          <small>
+            <ul class=citations>
+              <li>Specification Sheet <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM">devernay.free.fr/hacks/chip8/C8TECH10.HTM</a></li>
+            </ul>
+          </small>
+        </div>
+
+        <div>
+          <p class=job-role style="border-color: #C49A6C">2016: Dengine 2D engine for asteroids <a href="https://git.doylet.dev/doylet/dengine">git.doylet.dev/doylet/dengine</a></p>
+          <table>
+            <tr>
+              <td><img src="assets/projects_dengine_screen_1.png"></td>
+              <td><img src="assets/projects_dengine_demo.gif"></td>
+            </tr>
+          </table>
+          <p>
+            Dengine is a solo project, 2D game engine developed with OpenGL and low-level libraries in
+            C. The main goal of Dengine is to facilitate learning from many aspects of Computer
+            Science. Alongside Dengine, Asteroids is being built which guides the development of
+            features for the game. Dengine is inspired by Handmade Hero, with a focus on developing as
+            many features with minimal libraries, such that it is not too time-consuming and
+            counter-productive to do so.
+          </p>
+          <ul class=bullet-points>
+            <li>Asset Management (load data into intermediate representations)</li>
+            <li>Audio API from OpenAL</li>
+            <li>Basic 2D Game Mathematics/Physics (Vector, Trig, Explicit Euler)</li>
+            <li>Collision Detection (Single Axis Theorem, Minkowski Sum/Diff, AABB)</li>
+            <li>Debug Services & Displays</li>
+            <li>Entity Component Systems</li>
+            <li>IMGUI Systems</li>
+            <li>Input Parsing</li>
+            <li>Push-Buffer Memory Systems</li>
+            <li>Small Size Array Optimisations</li>
+            <li>Standard Library Replacements (e.g. atoi, strlen, itoa, string)</li>
+            <li>Texture Atlas Support, Runtime Font Packing</li>
+            <li>OpenGL 2D Rendering Pipeline & Batching Render Calls</li>
+          </ul>
+          <small>
+            <ul class=citations>
+              <li>Handmade Hero <a href="https://handmadehero.org/">handmadehero.org</a></li>
+            </ul>
+          </small>
+        </div>
+      </section>
     </section>
 
   </main>
