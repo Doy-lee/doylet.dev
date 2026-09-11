@@ -57,7 +57,7 @@
     .bullet-points { list-style: circle; margin-left: 1.5rem; }
 
     /*
-       Helper classes for printing to PDF. A class with `print-show` will only show up in in
+       Helper classes for printing to PDF. A class with `print-show` will only show up in
        printing mode. `print-hide` will hide the tagged class when in printing mode.
      */
     @media screen { .print-show { display: none; } }
@@ -87,29 +87,32 @@
       <h3>G'day!</h3>
       <p>
         I'm a software developer who started programming professionally in 2018 and have
-        slowly come to enjoy low-level programming. I have an interest in building bespoke software
-        using my own libraries, developing a "tech garden" so to speak. That is a bunch of
-        foundational libraries[<a href="#about-dn-library">1</a>] where I've written and/or
-        understood every line of code in them. Any bug is a bug in <i>my</i> source code that I can
-        go understand and fix.
+        slowly learnt the fundamentals of low-level programming. I have an interest in building
+        bespoke software using my own libraries, developing a "tech garden" so to speak. That is a
+        collection of foundational libraries[<a href="#about-citations">1</a>] where I've written
+        and/or understood every line of code in them. Any bug is a bug in <i>my</i> source code that
+        I can go understand and fix.
       </p>
 
       <p>
         Doing this is a nice forcing function that in turn provides an opportunity to learn about
-        different domains especially those involved in game technology. Game development involves
-        the marrying of many programming disciplines with a reasonably high bar of quality that is
-        expected by end users and making games is fun and interesting!
+        different domains, especially those involved in game technology. I am fond of real-time
+        interactive media and constraints. In particular, game development involves
+        the marrying of many programming disciplines where the consumer has a high standard that is
+        expected by default. Locked frame-rates, low-latency, interactive, a coherent design, a
+        stable world simulation and much more!
       </p>
 
       <p>
-        I'm constantly learning and re-writing/improving[<a href="#about-reinventing-the-wheel">2</a>]
+        I've made it a habit to constantly learn, rewrite, improve[<a href="#about-citations">2</a>]
         my foundational libraries as a form of training and
-        practice[<a href="#about-practice">3</a>]. In my experience each re-write has solidified my
-        understanding and improved the API design in that domain without fail.
+        practice[<a href="#about-citations">3</a>]. It is my experience that each iteration has
+        unlocked new insights whether it be API design, an alternate perspective, learning new
+        domains and so forth.
       </p>
 
       <p>
-        I learn and take inspiration from the design philosophies of:
+        I take inspiration from the design philosophies of:
         <ul class=bullet-points>
           <li><strong><a href="https://handmade.network/manifesto">Handmade</a></strong> communities and friends (C. Muratori, R. Fleury, Wookash) for their initiatives to teach and cultivate high quality software.</li>
           <li><strong><a href="https://tinygrad.org">TinyGrad</a></strong> for democratising ML through the relentless pursuit of simplification.</li>
@@ -131,7 +134,6 @@
         <li>C++11 onwards</li>
         <li>C99</li>
         <li>Ubuntu</li>
-        <li>Python</li>
         <li>DDS</li>
         <li>Docker/Ansible</li>
         <li>Build Systems (Makefiles/CMake/Ninja...)</li>
@@ -143,7 +145,7 @@
         <li>Platform Abstraction Layers</li>
         <li>Immediate Mode UIs</li>
         <li>Atomics/Intrinsics/SIMD</li>
-        <li>Virtual Memory Data Structures</li>
+        <li>Virtual Memory</li>
       </ul>
 
       <h3>A "Me" Primer</h3>
@@ -178,7 +180,7 @@
         </tr>
       </table>
 
-      <small>
+      <small id="about-citations" style="scroll-margin-top: 20vh">
         <ul class=citations>
           <li id="about-dn-library">[1] Foundation Libraries <a href="https://git.doylet.dev/doylet/dn">git.doylet.dev/doylet/dn</a></li>
           <li id="about-reinventing-the-wheel">[2] Reinventing the Wheel <a href="https://youtu.be/4B00hV3wmMY?t=292">Solving the Right Problems for Engine Programmers - Mike Acton‌ @ 4:52</a></li>
@@ -210,24 +212,30 @@
           <li class=job-role style="border-color: #519A8B">2024 - 2026: C++ Senior Software Engineer</li>
         </ul>
         <p>
-          Session is a decentralised private messaging application that onion routes its messages
-          using the Session Node network. The Session Node network is a decentralised and
-          distributed messaging protocol powered by the Oxen blockchain which allows operators to
-          trustlessly join the network to store and route messages on behalf of Session. Operator
-          tokens are escrowed by smart contracts and are rewarded for routing messages successfully.
+          Session is a decentralised private messaging application with +1m MAU that onion routes
+          messages using the Session Node network. This network is powered by the Oxen blockchain
+          consisting of community operated nodes that can trustlessly escrow stake to join the
+          network and execute the Session messaging protocol. Operator stakes are escrowed by smart
+          contracts, penalised for bad quality-of-service and are rewarded for routing messages.
         </p>
         <p>
-          I rejoined Session (formerly Oxen) in the blockchain team of 3 engineers, to assist the
-          network migrate its nodes from the Oxen blockchain to a layer 2 blockchain, Arbitrum. This
-          involves porting the trustless functionality from Oxen's C++ implementation into Solidity.
-          That is deployed on Arbitrum as well as designing and implementing the next stage, privacy
-          preserving subscriptions that grant access to premium messaging features.
+          I rejoined Session (formerly Oxen) in the blockchain team of 3 engineers to assist the
+          network migrate its nodes from Oxen to Arbitrum, an Ethereum layer 2 chain. This involved
+          porting the trustless functionality for operators to escrow their funds from Oxen's C++
+          implementation into Solidity smart contracts.
         </p>
         <p>
-          The migration had to occur on a live network in a way that minimises disruption of
-          the quality-of-service of users using Session. We migrated successfully in 2025
-          atomically switching over 1000+ nodes to change their source-of-truth from Oxen to
-          Arbitrum and simultaneously migrated escrowed liquidity to Arbitrum.
+          In June 2025, Oxen successfully migrated a live network of ~1200 Session Nodes to Arbitrum
+          atomically converting over ~$2m USD (1.2k nodes × 25k stake × 0.7c/token) of liquidity
+          whilst preserving the quality-of-service of the Session messenger as the network
+          transitioned into the new paradigm.
+        </p>
+        <p>
+          I designed and worked on the privacy preserving paid membership to Session Pro which
+          unlocked additional messaging capabilities such as larger file attachments and
+          larger message limits. This involved designing a protocol for anonymised Session Pro
+          certificates and privacy-preserving payment systems that interfaced with the iOS and
+          Google storefronts.
         </p>
         <ul class=bullet-points>
           <li>Built smart contracts[<a href="#session-smart-contracts">1</a>] to allow operators to escrow a stake to join a decentralised network, receive rewards.</li>
@@ -268,6 +276,17 @@
           improving the AI toolchain such as improving cross-agent collaboration, forward planning,
           scheduling and de-conflicting of agent intentionality, its execution and distributed agent
           communication to improve resilience in adversarial situations.
+        </p>
+        <p>
+          I worked on the in-house C++ kernel for BDI agents which was a real-time scheduler that
+          time-sliced, allocated goals and resources to agents (now open-sourced in Github; see
+          below) to execute their goals. I was also primarily responsible for the 2D discrete event
+          simulator using GLFW and Dear ImGui. This simulator tested the C++ kernel in various
+          scenarios such as solving games (like Tower of Hanoi) or agriculture use-cases for AOS's
+          in-house hardware branch working on autonomous off-road driving tech. The agent kernel
+          was designed with explainability in its core exposing an interface that allowed
+          GUIs and event simulators to hook into to use the kernel and explain the reasoning of
+          agents and/or build autonomous logic.
         </p>
         <ul class=bullet-points>
           <li>Coordinated multiple toolchain upgrades of our in-house AI frameworks, end-to-end.</li>
@@ -382,12 +401,12 @@
           My personal foundational libraries for tools in C-style C++ that replace the C/C++
           standard libraries for my projects. It provides a set of primitives designed around
           explicit memory control with allocator-aware APIs, zero-allocation patterns, and
-          arena-based memory management where appropriate.
+          arena-based virtual memory management where appropriate.
         </p>
         <p>
           The library is designed for trivial integration: a single amalgamated header and
-          implementation file with no external dependencies required. It targets Win32, POSIX, and
-          Emscripten/WASM, with compile-time feature toggles to include only what's needed.
+          implementation file with no external dependencies. It targets Win32, POSIX, and
+          Emscripten/WASM that can be configured with compile-time feature toggles.
         </p>
         <p>
           Core modules include arrays, hash tables, string manipulation with optional
@@ -398,7 +417,7 @@
         </p>
         <p>
           It has continually evolved since the start of my programming career and has been a testing
-          ground for understanding the implication of different API designs, how common
+          ground for understanding the implications of different API designs, how common
           functionality is built and exploring different primitives (like learning about AVX-512
           to use in string APIs).
         </p>
@@ -471,18 +490,17 @@
           web UIs.
         </p>
         <p>
-          The rewrite was a trade-off sacrificing latency for faster iteration. Chainflip has a
-          6-second block time which makes sub-second latency less critical than
-          the ability to iterate quickly. The bot runs two strategies: a delta-neutral hedge
-          across Chainflip and Hyperliquid (perps and spot), and a basic Bybit spot strategy. Bot
-          pricing is configurable using averages over a lookback window with tools to identify
-          competing orders and to offer to beat or match them in real-time.
+          The rewrite traded-off latency for faster iteration given that Chainflip has a 6-second
+          block time. This gives ample time for decision making and hence sub-second latency is not
+          as critical. The bot runs two strategies: a delta-neutral hedge across Chainflip and
+          Hyperliquid (perps and spot), and a basic Bybit spot strategy. Bot pricing is configurable
+          using averages over a lookback window with tools to identify competing orders and to offer
+          to beat or match them in real-time.
         </p>
         <p>
           The C++ GUI compiles to both a native desktop app and a WASM web build allowing for quick
           local iteration whilst allowing remote monitoring. It communicates with the Python backend
-          over WebSocket using a custom binary protocol. Features include a self-tuning swap window,
-          trading performance tracking and sends notifications via Session messenger webhooks.
+          over WebSocket using a custom binary protocol using asynchronous APIs.
         </p>
       </div>
 
@@ -641,7 +659,7 @@
             Math Masher is a cross-platform mobile app that aims to teach basic arithmetic skills
             including addition, subtraction and multiplication by gamifying the learning experience.
             The app was developed in a team using the Cocos2DX framework in C++. My role in the
-            project is as the lead developer and assisting role with asset design.
+            project was as the lead developer and assisting role with asset design.
           </p>
           <ul class=bullet-points>
             <li>Project management (Trello, minutes meeting, code review etc.)</li>
@@ -664,8 +682,8 @@
               <td><img src="assets/projects_dchip8_screen_2.png"></td>
             </tr>
           </table>
-          <p> DCHIP8 aims to emulate the CHIP8 architecture to better understand at a lower level
-              operations between memory, cpu, input and output.</p>
+          <p>DCHIP8 aims to emulate the CHIP8 architecture to better understand at a lower level
+              operations between memory, CPU, input and output.</p>
           <ul class=bullet-points>
             <li>Fetch, Decode, Execute Opcodes</li>
             <li>Modelling memory, registers and basic CPU architecture</li>
